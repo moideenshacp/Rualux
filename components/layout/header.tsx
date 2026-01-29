@@ -84,9 +84,9 @@ export function Header() {
                   <span className={cn(
                     "relative z-10 transition-colors duration-300",
                     isScrolled
-                      ? "text-foreground hover:text-secondary"
-                      : "text-white hover:text-secondary",
-                    pathname === link.href && "text-secondary"
+                      ? "text-muted-foreground hover:text-foreground"
+                      : "text-white/70 hover:text-white",
+                    pathname === link.href && (isScrolled ? "text-foreground" : "text-white")
                   )}>
                     {link.label}
                   </span>

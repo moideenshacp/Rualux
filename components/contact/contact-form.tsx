@@ -100,15 +100,15 @@ export function ContactForm() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="mt-8 flex flex-col items-center justify-center py-12 text-center"
+          className="mt-8 flex flex-col items-center justify-center rounded-xl border border-white/20 bg-white/5 py-12 text-center"
         >
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-            <CheckCircle className="h-8 w-8 text-green-600" />
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
+            <CheckCircle className="h-8 w-8 text-white" />
           </div>
-          <h3 className="mt-4 text-xl font-semibold text-foreground">
+          <h3 className="mt-4 text-xl font-semibold text-white">
             Message Sent Successfully!
           </h3>
-          <p className="mt-2 text-muted-foreground">
+          <p className="mt-2 text-white/70">
             Thank you for reaching out. We&apos;ll be in touch soon.
           </p>
         </motion.div>

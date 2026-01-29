@@ -51,8 +51,8 @@ export function LoadingScreen() {
                 className="h-20 w-20 rounded-full border-4 border-secondary"
                 animate={{
                   boxShadow: [
-                    "0 0 0 0 rgba(212, 175, 55, 0.4)",
-                    "0 0 0 20px rgba(212, 175, 55, 0)",
+                    "0 0 0 0 rgba(255, 255, 255, 0.4)",
+                    "0 0 0 20px rgba(255, 255, 255, 0)",
                   ]
                 }}
                 transition={{
