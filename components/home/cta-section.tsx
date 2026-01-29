@@ -47,7 +47,7 @@ export function CTASection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/80"
         >
-          Let&apos;s bring your vision to life. Schedule a consultation with our 
+          Let&apos;s bring your vision to life. Schedule a consultation with our
           design team and take the first step towards your dream space.
         </motion.p>
 
@@ -57,18 +57,22 @@ export function CTASection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light hover:scale-105"
-          >
-            Start Your Project
-          </Link>
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
-          >
-            View Our Work
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light"
+            >
+              Start Your Project
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
+            >
+              View Our Work
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>

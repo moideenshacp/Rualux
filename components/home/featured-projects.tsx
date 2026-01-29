@@ -28,7 +28,7 @@ export function FeaturedProjects() {
             Featured Projects
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Discover our latest interior design transformations that showcase our 
+            Discover our latest interior design transformations that showcase our
             commitment to excellence and innovative design solutions.
           </p>
         </motion.div>
@@ -38,12 +38,27 @@ export function FeaturedProjects() {
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative overflow-hidden rounded-xl bg-card"
+              initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? -100 : 100
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0
+              }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.8,
+                delay: (index % 4) * 0.1,
+                ease: "easeOut"
+              }}
+              whileHover={{
+                y: -15,
+                transition: { duration: 0.3 }
+              }}
+              className="group relative overflow-hidden rounded-xl bg-card shadow-lg"
             >
-              <div className="aspect-[3/4] overflow-hidden">
+              <div className="aspect-3/4 overflow-hidden">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -52,9 +67,9 @@ export function FeaturedProjects() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              
+
               {/* Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/90 via-primary/40 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-primary/90 via-primary/40 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <span className="text-xs font-medium uppercase tracking-wider text-secondary">
                   {project.category}
                 </span>
@@ -65,9 +80,9 @@ export function FeaturedProjects() {
                   {project.description}
                 </p>
               </div>
-              
+
               {/* Always visible title */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/80 to-transparent p-4 transition-opacity duration-300 group-hover:opacity-0">
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary/80 to-transparent p-4 transition-opacity duration-300 group-hover:opacity-0">
                 <h3 className="text-lg font-semibold text-primary-foreground">
                   {project.title}
                 </h3>

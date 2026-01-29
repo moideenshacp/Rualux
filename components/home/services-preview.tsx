@@ -27,7 +27,7 @@ export function ServicesPreview() {
             Our Services
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            From concept to completion, we offer comprehensive interior design 
+            From concept to completion, we offer comprehensive interior design
             services tailored to your unique vision and needs.
           </p>
         </motion.div>
@@ -37,10 +37,28 @@ export function ServicesPreview() {
           {previewServices.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group rounded-xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              initial={{
+                opacity: 0,
+                x: index % 3 === 0 ? -100 : index % 3 === 1 ? 0 : 100,
+                y: index % 3 === 1 ? 50 : 0
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                y: 0
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.8,
+                delay: (index % 3) * 0.1,
+                ease: "easeOut"
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+              className="group rounded-xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-2xl"
             >
               {/* Icon */}
               <motion.div
