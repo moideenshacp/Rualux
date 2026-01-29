@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { ChevronDown, Check } from "lucide-react"
 import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
 import { services } from "@/lib/data/services"
 import { cn } from "@/lib/utils"
 
@@ -29,20 +31,20 @@ export function ServicesList() {
               className="overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
             >
               {/* Header */}
-              <button
-                type="button"
+              <Button
+                variant="ghost"
                 onClick={() => toggleExpanded(service.id)}
-                className="flex w-full items-center justify-between p-6 text-left"
+                className="flex w-full h-auto items-center justify-between p-6 text-left hover:bg-transparent focus-visible:ring-0"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
                     <service.icon size={24} />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground">
+                  <div className="flex-1">
+                    <h3 className="line-clamp-1 text-lg font-semibold text-foreground">
                       {service.title}
                     </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
+                    <p className="mt-1 line-clamp-1 text-sm text-muted-foreground font-normal">
                       {service.shortDescription}
                     </p>
                   </div>
@@ -54,7 +56,7 @@ export function ServicesList() {
                     expandedId === service.id && "rotate-180"
                   )}
                 />
-              </button>
+              </Button>
 
               {/* Expanded Content */}
               <AnimatePresence>
@@ -117,12 +119,11 @@ export function ServicesList() {
             Schedule a free consultation and let us help you determine the best
             approach for your project.
           </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:bg-primary-light"
-          >
-            Schedule Consultation
-          </Link>
+          <div className="mt-6">
+            <Button asChild size="lg">
+              <Link href="/contact">Schedule Consultation</Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

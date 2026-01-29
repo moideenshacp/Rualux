@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 import { X, MapPin, Calendar, User } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
 import { projects, type Project } from "@/lib/data/projects"
 import { ProjectFilter } from "./project-filter"
 
@@ -109,14 +111,15 @@ export function ProjectGrid() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
-              <button
-                type="button"
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setSelectedProject(null)}
-                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-primary/80 text-primary-foreground transition-colors hover:bg-primary"
+                className="absolute right-4 top-4 z-10 h-10 w-10 rounded-full bg-primary/80 text-primary-foreground hover:bg-primary hover:text-white"
                 aria-label="Close modal"
               >
                 <X size={20} />
-              </button>
+              </Button>
 
               {/* Image */}
               <div className="aspect-video w-full overflow-hidden">

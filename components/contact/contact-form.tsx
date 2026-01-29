@@ -1,11 +1,15 @@
 "use client"
 
 import React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Send, Loader2, CheckCircle } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
 
 interface FormData {
@@ -115,22 +119,18 @@ export function ContactForm() {
       ) : (
         <form onSubmit={handleSubmit} className="mt-8 space-y-6">
           {/* Name Field */}
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-foreground"
-            >
+          <div className="space-y-2">
+            <Label htmlFor="name">
               Full Name <span className="text-destructive">*</span>
-            </label>
-            <input
-              type="text"
+            </Label>
+            <Input
               id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
               className={cn(
-                "mt-2 w-full rounded-lg border bg-background px-4 py-3 text-foreground transition-all focus:outline-none focus:ring-2 focus:ring-secondary",
-                errors.name ? "border-destructive" : "border-border"
+                "h-12",
+                errors.name ? "border-destructive focus-visible:ring-destructive" : ""
               )}
               placeholder="John Doe"
             />
@@ -140,22 +140,19 @@ export function ContactForm() {
           </div>
 
           {/* Email Field */}
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-foreground"
-            >
+          <div className="space-y-2">
+            <Label htmlFor="email">
               Email Address <span className="text-destructive">*</span>
-            </label>
-            <input
+            </Label>
+            <Input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               className={cn(
-                "mt-2 w-full rounded-lg border bg-background px-4 py-3 text-foreground transition-all focus:outline-none focus:ring-2 focus:ring-secondary",
-                errors.email ? "border-destructive" : "border-border"
+                "h-12",
+                errors.email ? "border-destructive focus-visible:ring-destructive" : ""
               )}
               placeholder="john@example.com"
             />
@@ -165,41 +162,35 @@ export function ContactForm() {
           </div>
 
           {/* Phone Field */}
-          <div>
-            <label
-              htmlFor="phone"
-              className="block text-sm font-medium text-foreground"
-            >
+          <div className="space-y-2">
+            <Label htmlFor="phone">
               Phone Number <span className="text-muted-foreground">(Optional)</span>
-            </label>
-            <input
+            </Label>
+            <Input
               type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground transition-all focus:outline-none focus:ring-2 focus:ring-secondary"
+              className="h-12"
               placeholder="+1 (555) 123-4567"
             />
           </div>
 
           {/* Message Field */}
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-foreground"
-            >
+          <div className="space-y-2">
+            <Label htmlFor="message">
               Message <span className="text-destructive">*</span>
-            </label>
-            <textarea
+            </Label>
+            <Textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows={5}
               className={cn(
-                "mt-2 w-full resize-none rounded-lg border bg-background px-4 py-3 text-foreground transition-all focus:outline-none focus:ring-2 focus:ring-secondary",
-                errors.message ? "border-destructive" : "border-border"
+                "resize-none",
+                errors.message ? "border-destructive focus-visible:ring-destructive" : ""
               )}
               placeholder="Tell us about your project..."
             />
@@ -209,23 +200,24 @@ export function ContactForm() {
           </div>
 
           {/* Submit Button */}
-          <button
+          <Button
             type="submit"
             disabled={isSubmitting}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-4 font-semibold text-secondary-foreground transition-all hover:bg-secondary-light disabled:cursor-not-allowed disabled:opacity-70"
+            className="h-14 w-full text-base font-semibold"
+            variant="secondary"
           >
             {isSubmitting ? (
               <>
-                <Loader2 size={20} className="animate-spin" />
+                <Loader2 size={20} className="mr-2 animate-spin" />
                 Sending...
               </>
             ) : (
               <>
-                <Send size={20} />
+                <Send size={20} className="mr-2" />
                 Send Message
               </>
             )}
-          </button>
+          </Button>
         </form>
       )}
     </motion.div>

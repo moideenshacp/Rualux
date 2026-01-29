@@ -5,17 +5,19 @@ import React from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
-  Twitter, 
-  MapPin, 
-  Phone, 
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  MapPin,
+  Phone,
   Mail,
   Send
 } from "lucide-react"
 import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -75,11 +77,11 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80">
-              Award-winning interior design studio crafting exceptional spaces 
-              that inspire and transform. We bring your vision to life with 
+              Award-winning interior design studio crafting exceptional spaces
+              that inspire and transform. We bring your vision to life with
               creativity, precision, and passion.
             </p>
-            
+
             {/* Social Links */}
             <div className="mt-6 flex gap-4">
               {socialLinks.map((social) => (
@@ -154,20 +156,22 @@ export function Footer() {
             <div className="mt-6">
               <h4 className="mb-3 text-sm font-medium">Subscribe to Newsletter</h4>
               <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input
+                <Input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email"
-                  className="flex-1 rounded-lg bg-primary-foreground/10 px-4 py-2 text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-secondary"
+                  className="bg-white/10 border-none text-white placeholder:text-white/50 focus-visible:ring-secondary"
                 />
-                <button
+                <Button
                   type="submit"
-                  className="flex items-center justify-center rounded-lg bg-secondary px-4 py-2 text-secondary-foreground transition-colors hover:bg-secondary-light"
+                  variant="secondary"
+                  size="icon"
+                  className="shrink-0"
                   aria-label="Subscribe"
                 >
                   <Send size={18} />
-                </button>
+                </Button>
               </form>
               {isSubscribed && (
                 <p className="mt-2 text-xs text-secondary">

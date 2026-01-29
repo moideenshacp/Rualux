@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import { projectCategories } from "@/lib/data/projects"
 
 interface ProjectFilterProps {
@@ -16,15 +17,15 @@ export function ProjectFilter({
   return (
     <div className="flex flex-wrap justify-center gap-3">
       {projectCategories.map((category) => (
-        <button
+        <Button
           key={category}
-          type="button"
+          variant="ghost"
           onClick={() => onCategoryChange(category)}
           className={cn(
             "relative rounded-full px-6 py-2 text-sm font-medium transition-colors",
             activeCategory === category
-              ? "text-secondary-foreground"
-              : "text-muted-foreground hover:text-foreground"
+              ? "text-secondary-foreground hover:text-secondary-foreground"
+              : "text-muted-foreground hover:text-secondary-foreground"
           )}
         >
           {activeCategory === category && (
@@ -35,7 +36,7 @@ export function ProjectFilter({
             />
           )}
           <span className="relative z-10">{category}</span>
-        </button>
+        </Button>
       ))}
     </div>
   )

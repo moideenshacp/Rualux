@@ -33,46 +33,73 @@ export function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="fixed inset-0 z-100 flex items-center justify-center bg-primary"
+          className="fixed inset-0 z-100 flex flex-col items-center justify-center bg-primary"
+          style={{ height: '100dvh' }}
         >
           <motion.div
-            initial={{ scale: 0.5, opacity: 0, rotate: 0 }}
-            animate={{ scale: 1, opacity: 1, rotate: 360 }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 1.1, opacity: 0 }}
-            transition={{
-              duration: 1.5,
-              ease: "easeOut",
-              rotate: { duration: 1.5, ease: "easeInOut" }
-            }}
-            className="flex flex-col items-center gap-4"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center gap-8"
           >
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <motion.div
-                className="h-20 w-20 rounded-full border-4 border-secondary"
+                className="h-24 w-24 rounded-full border-2 border-secondary/30"
                 animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute h-16 w-16 rounded-full border-4 border-secondary"
+                animate={{
+                  rotate: 360,
                   boxShadow: [
-                    "0 0 0 0 rgba(255, 255, 255, 0.4)",
-                    "0 0 0 20px rgba(255, 255, 255, 0)",
+                    "0 0 0 0 rgba(90, 5, 5, 0.4)",
+                    "0 0 20px 0 rgba(90, 5, 5, 0.2)",
+                    "0 0 0 0 rgba(90, 5, 5, 0.4)",
                   ]
                 }}
                 transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeOut"
+                  rotate: { duration: 2, repeat: Infinity, ease: "linear" },
+                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
                 }}
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-2xl font-bold text-secondary">LI</span>
+              <div className="absolute flex items-center justify-center">
+                <span className="text-2xl font-bold tracking-tighter text-secondary">LI</span>
               </div>
             </div>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="text-sm tracking-[0.3em] text-primary-foreground uppercase"
-            >
-              Luxe Interiors
-            </motion.p>
+
+            <div className="flex flex-col items-center gap-2">
+              <motion.h2
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="text-xl font-bold tracking-[0.2em] text-white uppercase"
+              >
+                Luxe Interiors
+              </motion.h2>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
+                className="h-[1px] bg-secondary/50"
+              />
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.5 }}
+                className="text-[10px] tracking-[0.4em] text-white/50 uppercase"
+              >
+                Design & Build
+              </motion.p>
+            </div>
           </motion.div>
         </motion.div>
       )}

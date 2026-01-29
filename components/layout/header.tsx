@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -48,7 +49,8 @@ export function Header() {
         animate={isHidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 transition-all duration-500",
+          isMobileMenuOpen ? "z-70" : "z-50",
           isScrolled
             ? "bg-background/70 backdrop-blur-xl shadow-lg py-3"
             : "bg-transparent py-6"
@@ -67,7 +69,7 @@ export function Header() {
               </motion.div>
               <span className={cn(
                 "text-lg font-semibold tracking-wide transition-colors duration-300",
-                isScrolled ? "text-foreground" : "text-white"
+                isMobileMenuOpen ? "text-white" : isScrolled ? "text-foreground" : "text-white"
               )}>
                 Luxe Interiors
               </span>
@@ -99,49 +101,40 @@ export function Header() {
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
-
-                  {/* Hover "Pill" Effect - Optional, but nice for "modern" feel 
-                      If you want a pill active state, we can swap the bottom border for a background pill.
-                      Let's stick to a clean subtle interaction for now to match the "Luxe" theme.
-                  */}
                 </Link>
               ))}
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              type="button"
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-full md:hidden transition-colors hover:bg-white/10",
-                isScrolled ? "text-foreground" : "text-white"
+                "relative z-[80] flex h-12 w-12 items-center justify-center rounded-full md:hidden transition-all duration-300",
+                isMobileMenuOpen
+                  ? "text-white bg-white/10"
+                  : isScrolled
+                    ? "text-foreground bg-black/5"
+                    : "text-white bg-black/40 shadow-lg"
               )}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              <AnimatePresence mode="wait">
-                {isMobileMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X size={24} />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu size={24} />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </button>
+              <div className="relative h-6 w-6">
+                <motion.span
+                  animate={isMobileMenuOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -6 }}
+                  className="absolute left-0 top-1/2 block h-0.5 w-6 bg-current transition-transform"
+                />
+                <motion.span
+                  animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                  className="absolute left-0 top-1/2 block h-0.5 w-6 bg-current transition-all"
+                />
+                <motion.span
+                  animate={isMobileMenuOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 6 }}
+                  className="absolute left-0 top-1/2 block h-0.5 w-6 bg-current transition-transform"
+                />
+              </div>
+            </Button>
           </nav>
         </div>
       </motion.header>
@@ -153,24 +146,29 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
-            onClick={() => setIsMobileMenuOpen(false)}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black md:hidden"
           >
+            {/* Animated Background Pattern */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,_rgba(90,5,5,0.4)_0%,_transparent_50%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,_rgba(90,5,5,0.3)_0%,_transparent_40%)]" />
+            </div>
+
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 h-full w-[80%] bg-background p-8 shadow-2xl sm:w-[60%]"
-              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
+              className="relative z-10 flex flex-col items-center gap-10 px-6 text-center"
             >
-              <div className="mt-20 flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.href}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + index * 0.1 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
                   >
                     <Link
                       href={link.href}
@@ -181,11 +179,27 @@ export function Header() {
                       )}
                     >
                       {link.label}
+                      {pathname === link.href && (
+                        <motion.div
+                          layoutId="mobileActive"
+                          className="absolute -bottom-2 left-0 right-0 mx-auto h-1 w-12 rounded-full bg-secondary"
+                        />
+                      )}
                     </Link>
-                    <div className="mt-4 h-[1px] w-full bg-border/50" />
                   </motion.div>
                 ))}
               </div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="mt-10"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-secondary/50">
+                  <span className="text-xs font-bold text-secondary">LI</span>
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         )}
