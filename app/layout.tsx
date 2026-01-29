@@ -17,14 +17,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Luxe Interiors | Award-Winning Interior Design',
+  title: 'Rualux - Rualux Design and Build',
   description: 'Transform your space into art with our award-winning interior design solutions. Residential and commercial design services that bring your vision to life.',
   keywords: ['interior design', 'home decor', 'residential design', 'commercial design', 'luxury interiors'],
   generator: 'v0.app'
 }
 
 export const viewport: Viewport = {
-  themeColor: '#2C3E50',
+  themeColor: '#000000',
 }
 
 

@@ -13,9 +13,9 @@ export default function ContactPage() {
       <Header />
       <main>
         <ContactHero />
-        
+
         {/* Contact Form & Info Section */}
-        <section className="bg-background py-20 md:py-32">
+        <section className="bg-background py-0 md:py-2 mb-20!">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2">
               <ContactForm />
@@ -23,7 +23,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-        
+
         <MapSection />
       </main>
       <Footer />

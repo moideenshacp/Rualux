@@ -19,7 +19,7 @@ export function ProjectGrid() {
       : projects.filter((p) => p.category === activeCategory)
 
   return (
-    <section ref={ref} className="bg-background py-20 md:py-32">
+    <section ref={ref} className="bg-background py-0 md:py-2 mb-20!">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Filter */}
         <motion.div

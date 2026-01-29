@@ -8,7 +8,7 @@ export function StorySection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
 
   return (
-    <section ref={ref} className="bg-background py-20 md:py-32">
+    <section ref={ref} className="bg-background py-0 md:py-12 mb-20!">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Image */}
@@ -43,24 +43,24 @@ export function StorySection() {
             <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
               A Legacy of Design Excellence
             </h2>
-            
+
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
-                Founded in 2005 by Alexandra Chen, Luxe Interiors began as a small 
-                studio with a big vision: to create spaces that not only look 
+                Founded in 2005 by Alexandra Chen, Luxe Interiors began as a small
+                studio with a big vision: to create spaces that not only look
                 beautiful but truly enhance the lives of those who inhabit them.
               </p>
               <p>
-                Over nearly two decades, we&apos;ve grown from a team of three passionate 
-                designers to an award-winning firm with over 500 completed projects 
-                spanning residential, commercial, and hospitality sectors across 
+                Over nearly two decades, we&apos;ve grown from a team of three passionate
+                designers to an award-winning firm with over 500 completed projects
+                spanning residential, commercial, and hospitality sectors across
                 North America and Europe.
               </p>
               <p>
-                Our approach combines timeless design principles with innovative 
-                techniques, always keeping our clients&apos; unique needs and 
-                aspirations at the heart of every project. We believe that great 
-                design should be both beautiful and functional, creating spaces 
+                Our approach combines timeless design principles with innovative
+                techniques, always keeping our clients&apos; unique needs and
+                aspirations at the heart of every project. We believe that great
+                design should be both beautiful and functional, creating spaces
                 that inspire and endure.
               </p>
             </div>

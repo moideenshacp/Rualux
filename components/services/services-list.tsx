@@ -17,7 +17,7 @@ export function ServicesList() {
   }
 
   return (
-    <section ref={ref} className="bg-background py-20 md:py-32">
+    <section ref={ref} className="bg-background py-0 md:py-2 mb-20!">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="space-y-6">
           {services.map((service, index) => (
@@ -70,7 +70,7 @@ export function ServicesList() {
                       <p className="text-muted-foreground">
                         {service.fullDescription}
                       </p>
-                      
+
                       <h4 className="mt-6 text-sm font-semibold uppercase tracking-wider text-foreground">
                         What&apos;s Included
                       </h4>
@@ -114,7 +114,7 @@ export function ServicesList() {
             Not sure which service you need?
           </h3>
           <p className="mt-3 text-muted-foreground">
-            Schedule a free consultation and let us help you determine the best 
+            Schedule a free consultation and let us help you determine the best
             approach for your project.
           </p>
           <Link
