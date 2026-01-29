@@ -3,15 +3,28 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 
+// Use a global variable to track if the loading screen has been shown in the current session
+// This persists across client-side navigation but resets on full page reload
+let hasShownLoading = false
+
 export function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
+  const [shouldRender, setShouldRender] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    if (hasShownLoading) {
       setIsLoading(false)
-    }, 2500)
-    return () => clearTimeout(timer)
+    } else {
+      setShouldRender(true)
+      const timer = setTimeout(() => {
+        setIsLoading(false)
+        hasShownLoading = true
+      }, 2500)
+      return () => clearTimeout(timer)
+    }
   }, [])
+
+  if (!shouldRender && hasShownLoading) return null
 
   return (
     <AnimatePresence>
@@ -20,7 +33,7 @@ export function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-primary"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-primary"
         >
           <motion.div
             initial={{ scale: 0.5, opacity: 0, rotate: 0 }}
@@ -36,14 +49,14 @@ export function LoadingScreen() {
             <div className="relative">
               <motion.div
                 className="h-20 w-20 rounded-full border-4 border-secondary"
-                animate={{ 
+                animate={{
                   boxShadow: [
                     "0 0 0 0 rgba(212, 175, 55, 0.4)",
                     "0 0 0 20px rgba(212, 175, 55, 0)",
                   ]
                 }}
-                transition={{ 
-                  duration: 1.5, 
+                transition={{
+                  duration: 1.5,
                   repeat: Infinity,
                   ease: "easeOut"
                 }}
