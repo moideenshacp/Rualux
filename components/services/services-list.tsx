@@ -34,17 +34,17 @@ export function ServicesList() {
               <Button
                 variant="ghost"
                 onClick={() => toggleExpanded(service.id)}
-                className="flex w-full h-auto items-center justify-between p-6 text-left hover:bg-transparent focus-visible:ring-0"
+                className="flex w-full h-auto min-h-20 items-center justify-between p-6 text-left whitespace-normal hover:bg-transparent focus-visible:ring-0"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 mr-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
                     <service.icon size={24} />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="line-clamp-1 text-lg font-semibold text-foreground">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
                       {service.title}
                     </h3>
-                    <p className="mt-1 line-clamp-1 text-sm text-muted-foreground font-normal">
+                    <p className="mt-1 text-sm text-muted-foreground font-normal">
                       {service.shortDescription}
                     </p>
                   </div>
