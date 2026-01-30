@@ -12,7 +12,7 @@ export function FeaturedProjects() {
   const featuredProjects = projects.slice(0, 4)
 
   return (
-    <section ref={ref} className="bg-muted py-20 md:py-32">
+    <section ref={ref} className="bg-muted py-20 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
