@@ -200,8 +200,8 @@ export function Header() {
                   <Image
                     src="/rualux-letter.png"
                     alt="R"
-                    width={24}
-                    height={24}
+                    width={56}
+                    height={56}
                     className="object-contain"
                   />
                 </div>

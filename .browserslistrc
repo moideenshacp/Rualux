@@ -1,4 +1,4 @@
-> 0.2%
-last 4 versions
+defaults
+last 2 versions
 not dead
-not ie 11
+> 0.2%
