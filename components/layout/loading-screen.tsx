@@ -33,8 +33,7 @@ export function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="fixed inset-0 z-100 flex flex-col items-center justify-center bg-primary"
-          style={{ height: '100dvh' }}
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-primary"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
