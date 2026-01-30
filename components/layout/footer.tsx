@@ -3,6 +3,7 @@
 import React from "react"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import {
@@ -68,11 +69,16 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-secondary">
-                <span className="text-sm font-bold text-secondary">R</span>
+            <div className="flex items-center gap-3">
+              <div className="relative h-10 w-10">
+                <Image
+                  src="/rualux-letter.png"
+                  alt="Rualux Letter"
+                  fill
+                  className="object-contain object-left"
+                />
               </div>
-              <span className="text-lg font-semibold tracking-wide">
+              <span className="text-xl font-bold tracking-tight text-white">
                 Rualux
               </span>
             </div>

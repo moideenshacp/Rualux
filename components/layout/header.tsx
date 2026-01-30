@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
 import { Menu, X } from "lucide-react"
@@ -46,7 +47,7 @@ export function Header() {
           visible: { y: 0 },
           hidden: { y: "-100%" },
         }}
-        animate={isHidden ? "hidden" : "visible"}
+        // animate={isHidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={cn(
           "fixed top-0 left-0 right-0 transition-all duration-500",
@@ -60,19 +61,18 @@ export function Header() {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="group flex items-center gap-2">
-              <motion.div
-                whileHover={{ rotate: 180 }}
-                transition={{ duration: 0.5 }}
-                className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-secondary bg-secondary/10"
-              >
-                <span className="text-sm font-bold text-secondary">R</span>
-              </motion.div>
-              <span className={cn(
-                "text-lg font-semibold tracking-wide transition-colors duration-300",
-                isMobileMenuOpen ? "text-white" : isScrolled ? "text-foreground" : "text-white"
-              )}>
-                Rualux
-              </span>
+              <div className="relative h-10 w-32">
+                <Image
+                  src="/Rualux-logo.png"
+                  alt="Rualux Logo"
+                  fill
+                  className={cn(
+                    "object-contain transition-all duration-300",
+                    !isScrolled && !isMobileMenuOpen && "brightness-0 invert"
+                  )}
+                  priority
+                />
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -196,8 +196,14 @@ export function Header() {
                 transition={{ delay: 0.8 }}
                 className="mt-10"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-secondary/50">
-                  <span className="text-xs font-bold text-secondary">R</span>
+                <div className="flex h-12 w-12 items-center justify-center">
+                  <Image
+                    src="/rualux-letter.png"
+                    alt="R"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
                 </div>
               </motion.div>
             </motion.div>

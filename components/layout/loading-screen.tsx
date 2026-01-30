@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 // Use a global variable to track if the loading screen has been shown in the current session
 // This persists across client-side navigation but resets on full page reload
@@ -71,33 +72,44 @@ export function LoadingScreen() {
                 }}
               />
               <div className="absolute flex items-center justify-center">
-                <span className="text-2xl font-bold tracking-tighter text-secondary">R</span>
+                <Image
+                  src="/rualux-letter.png"
+                  alt="R"
+                  width={44}
+                  height={44}
+                  className="object-contain"
+                />
               </div>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <motion.h2
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-xl font-bold tracking-[0.2em] text-white uppercase"
+                className="relative h-12 w-48"
               >
-                Rualux
-              </motion.h2>
+                <Image
+                  src="/Rualux-logo.png"
+                  alt="Rualux"
+                  fill
+                  className="object-contain brightness-0 invert"
+                />
+              </motion.div>
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
                 className="h-[1px] bg-secondary/50"
               />
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
                 className="text-[10px] tracking-[0.4em] text-white/50 uppercase"
               >
                 Design & Build
-              </motion.p>
+              </motion.p> */}
             </div>
           </motion.div>
         </motion.div>
