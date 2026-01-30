@@ -16,7 +16,32 @@ export const metadata: Metadata = {
   title: 'Rualux - Rualux Design and Build',
   description: 'Transform your space into art with our award-winning interior design solutions. Residential and commercial design services that bring your vision to life.',
   keywords: ['interior design', 'home decor', 'residential design', 'commercial design', 'luxury interiors'],
-  generator: 'v0.app'
+  icons: {
+    icon: '/Rua-favicon.jpg',
+    apple: '/Rua-favicon.jpg',
+  },
+  openGraph: {
+    title: 'Rualux - Rualux Design and Build',
+    description: 'Transform your space into art with our award-winning interior design solutions. Residential and commercial design services that bring your vision to life.',
+    url: 'https://rualux.vercel.app',
+    siteName: 'Rualux',
+    images: [
+      {
+        url: '/Rualux-logo.png', // Ideally this should be a large preview image (1200x630)
+        width: 1200,
+        height: 630,
+        alt: 'Rualux Design and Build',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rualux - Rualux Design and Build',
+    description: 'Transform your space into art with our award-winning interior design solutions.',
+    images: ['/Rualux-logo.png'],
+  },
 }
 
 export const viewport: Viewport = {
