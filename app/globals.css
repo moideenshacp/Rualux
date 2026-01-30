@@ -146,3 +146,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @keyframes marquee-right {
+    from {
+      transform: translateX(-50%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right 40s linear infinite;
+  }
+
+  .pause-hover:hover {
+    @apply [animation-play-state:paused];
+  }
+
+  .paused {
+    @apply [animation-play-state:paused];
+  }
+}
