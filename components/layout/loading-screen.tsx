@@ -72,7 +72,7 @@ export function LoadingScreen() {
                 }}
               />
               <div className="absolute flex items-center justify-center">
-                <span className="text-2xl font-bold tracking-tighter text-secondary">LI</span>
+                <span className="text-2xl font-bold tracking-tighter text-secondary">R</span>
               </div>
             </div>
 
@@ -83,7 +83,7 @@ export function LoadingScreen() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-xl font-bold tracking-[0.2em] text-white uppercase"
               >
-                Luxe Interiors
+                Rualux
               </motion.h2>
               <motion.div
                 initial={{ width: 0 }}

@@ -22,7 +22,7 @@ export function MapSection() {
             Visit Our Studio
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-            We&apos;d love to meet you in person. Schedule an appointment to visit 
+            We&apos;d love to meet you in person. Schedule an appointment to visit
             our design studio.
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ export function MapSection() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Luxe Interiors Location"
+            title="Rualux Location"
             className="w-full"
           />
         </motion.div>

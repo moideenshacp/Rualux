@@ -21,7 +21,7 @@ export function StorySection() {
             <div className="aspect-[4/5] overflow-hidden rounded-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80"
-                alt="Luxe Interiors Studio"
+                alt="Rualux"
                 width={600}
                 height={750}
                 className="h-full w-full object-cover"

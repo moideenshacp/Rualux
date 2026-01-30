@@ -70,10 +70,10 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-secondary">
-                <span className="text-sm font-bold text-secondary">LI</span>
+                <span className="text-sm font-bold text-secondary">R</span>
               </div>
               <span className="text-lg font-semibold tracking-wide">
-                Luxe Interiors
+                Rualux
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80">
@@ -185,7 +185,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-primary-foreground/10 pt-8 text-center">
           <p className="text-sm text-primary-foreground/60">
-            &copy; {new Date().getFullYear()} Luxe Interiors. All rights reserved.
+            &copy; {new Date().getFullYear()} Rualux. All rights reserved.
           </p>
         </div>
       </motion.div>

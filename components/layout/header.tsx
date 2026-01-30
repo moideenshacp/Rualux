@@ -65,13 +65,13 @@ export function Header() {
                 transition={{ duration: 0.5 }}
                 className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-secondary bg-secondary/10"
               >
-                <span className="text-sm font-bold text-secondary">LI</span>
+                <span className="text-sm font-bold text-secondary">R</span>
               </motion.div>
               <span className={cn(
                 "text-lg font-semibold tracking-wide transition-colors duration-300",
                 isMobileMenuOpen ? "text-white" : isScrolled ? "text-foreground" : "text-white"
               )}>
-                Luxe Interiors
+                Rualux
               </span>
             </Link>
 
@@ -174,7 +174,7 @@ export function Header() {
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
-                        "block text-2xl font-semibold transition-colors hover:text-secondary",
+                        "relative text-2xl font-semibold transition-colors hover:text-secondary",
                         pathname === link.href ? "text-secondary" : "text-foreground"
                       )}
                     >
@@ -197,7 +197,7 @@ export function Header() {
                 className="mt-10"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-secondary/50">
-                  <span className="text-xs font-bold text-secondary">LI</span>
+                  <span className="text-xs font-bold text-secondary">R</span>
                 </div>
               </motion.div>
             </motion.div>
