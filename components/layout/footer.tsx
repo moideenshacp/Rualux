@@ -95,9 +95,14 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-all hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
+                  className="group flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-all hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
                 >
-                  <social.icon size={18} />
+                  <motion.div
+                    whileHover={{ rotate: 12 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <social.icon size={18} />
+                  </motion.div>
                 </a>
               ))}
             </div>

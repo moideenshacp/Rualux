@@ -23,41 +23,27 @@ export function CTASection() {
       <div className="absolute inset-0 bg-primary/80" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-sm font-medium uppercase tracking-widest text-secondary"
-        >
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8"
+      >
+        <span className="text-sm font-medium uppercase tracking-widest text-secondary">
           Start Your Journey
-        </motion.span>
+        </span>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 text-3xl font-bold text-primary-foreground sm:text-4xl md:text-5xl lg:text-6xl text-balance"
-        >
+        <h2 className="mt-4 text-3xl font-bold text-primary-foreground sm:text-4xl md:text-5xl lg:text-6xl text-balance">
           Ready to Transform Your Space?
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/80"
-        >
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/80">
           Let&apos;s bring your vision to life. Schedule a consultation with our
           design team and take the first step towards your dream space.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-        >
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/contact"
@@ -74,8 +60,8 @@ export function CTASection() {
               <AnimatedFlipText text="View Our Work" />
             </Link>
           </motion.div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   )
 }

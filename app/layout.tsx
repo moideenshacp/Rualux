@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { LoadingScreen } from "@/components/layout/loading-screen"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
+import { StickyCTA } from "@/components/ui/sticky-cta"
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -63,6 +64,7 @@ export default function RootLayout({
         <LoadingScreen />
         {children}
         <WhatsAppButton />
+        <StickyCTA />
         <Analytics />
       </body>
     </html>

@@ -5,10 +5,10 @@ import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 
 export function StorySection() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
 
   return (
-    <section ref={ref} className="bg-background py-0 md:py-6 mb-20!">
+    <section ref={ref} className="bg-background py-0 md:py-6 mb-20! overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Image */}
@@ -28,13 +28,13 @@ export function StorySection() {
               />
             </div>
             {/* Accent Box */}
-            <div className="absolute -bottom-6 -right-6 hidden h-48 w-48 rounded-xl bg-secondary/20 md:block" />
+            <div className="absolute -bottom-6 -right-6 h-32 w-32 md:h-48 md:w-48 rounded-xl bg-secondary/20" />
           </motion.div>
 
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            animate={inView ? { opacity: 1, y: 0, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="text-sm font-medium uppercase tracking-widest text-secondary">
@@ -46,7 +46,7 @@ export function StorySection() {
 
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
-                Founded in 2005 by Alexandra Chen, Luxe Interiors began as a small
+                Founded in 2005 by Alexandra Chen, Rualux began as a small
                 studio with a big vision: to create spaces that not only look
                 beautiful but truly enhance the lives of those who inhabit them.
               </p>

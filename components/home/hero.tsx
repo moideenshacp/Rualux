@@ -33,9 +33,9 @@ export function Hero() {
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Background Image with Parallax */}
         <motion.div
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
           style={{ y: bgY }}
           className="absolute inset-0"
         >

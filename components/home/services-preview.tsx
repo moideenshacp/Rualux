@@ -16,9 +16,10 @@ export function ServicesPreview() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center"
         >
           <span className="text-sm font-medium uppercase tracking-widest text-secondary">
@@ -64,7 +65,8 @@ export function ServicesPreview() {
               {/* Icon */}
               <motion.div
                 initial={{ rotate: 0 }}
-                whileHover={{ rotate: 10, scale: 1.1 }}
+                whileHover={{ rotate: 12, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
                 className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-secondary/10 text-secondary"
               >
                 <service.icon size={28} />
@@ -95,9 +97,10 @@ export function ServicesPreview() {
 
         {/* View All Link */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-12 text-center"
         >
           <Link
