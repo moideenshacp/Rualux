@@ -1,10 +1,11 @@
 "use client"
 
-import React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Send, Loader2, CheckCircle } from "lucide-react"
+import emailjs from '@emailjs/browser'
+import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -65,12 +66,34 @@ export function ContactForm() {
 
     setIsSubmitting(true)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        {
+          name: formData.name, // To match {{name}} in your template content
+          from_name: formData.name, // To match {{from_name}} in your template sender
+          from_email: formData.email, // To match {{from_email}} in Reply-To
+          phone: formData.phone,
+          message: formData.message,
+          time: new Date().toLocaleString(), // To match {{time}} in your template
+          title: "New Inquiry from Website", // To match {{title}} in your Subject
+          to_email: 'shanucp1024@gmail.com',
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+      )
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", phone: "", message: "" })
+      if (result.status === 200) {
+        setIsSubmitted(true)
+        setFormData({ name: "", email: "", phone: "", message: "" })
+        toast.success("Message sent successfully!")
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      toast.error("Failed to send message. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
 
     // Reset success message after 5 seconds
     setTimeout(() => setIsSubmitted(false), 5000)
