@@ -6,6 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { projects } from "@/lib/data/projects"
+import { AnimatedFlipText } from "@/components/ui/animated-flip-text"
 
 export function FeaturedProjects() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -69,7 +70,7 @@ export function FeaturedProjects() {
               </div>
 
               {/* Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-primary/90 via-primary/40 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-primary/90 via-primary/40 to-transparent p-6 opacity-100 lg:opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100">
                 <span className="text-xs font-medium uppercase tracking-wider text-secondary">
                   {project.category}
                 </span>
@@ -81,8 +82,8 @@ export function FeaturedProjects() {
                 </p>
               </div>
 
-              {/* Always visible title */}
-              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary/80 to-transparent p-4 transition-opacity duration-300 group-hover:opacity-0">
+              {/* Always visible title (only on desktop where overlay is hidden) */}
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary/80 to-transparent p-4 transition-opacity duration-300 opacity-0 lg:opacity-100 lg:group-hover:opacity-0">
                 <h3 className="text-lg font-semibold text-primary-foreground">
                   {project.title}
                 </h3>
@@ -102,7 +103,7 @@ export function FeaturedProjects() {
             href="/projects"
             className="group inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
           >
-            View All Projects
+            <AnimatedFlipText text="View All Projects" />
             <ArrowRight
               size={18}
               className="transition-transform group-hover:translate-x-1"

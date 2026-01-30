@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { useRef } from "react"
+import { AnimatedFlipText } from "@/components/ui/animated-flip-text"
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -91,7 +92,7 @@ export function Hero() {
                 href="/projects"
                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light"
               >
-                Explore Our Work
+                <AnimatedFlipText text="Explore Our Work" />
               </Link>
             </motion.div>
 
@@ -101,9 +102,9 @@ export function Hero() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
+                className="group inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
               >
-                Start Your Project
+                <AnimatedFlipText text="Start Your Project" />
               </Link>
             </motion.div>
           </motion.div>

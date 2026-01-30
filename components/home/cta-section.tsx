@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Link from "next/link"
+import { AnimatedFlipText } from "@/components/ui/animated-flip-text"
 
 export function CTASection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -60,17 +61,17 @@ export function CTASection() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light"
+              className="group inline-flex items-center justify-center rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light"
             >
-              Start Your Project
+              <AnimatedFlipText text="Start Your Project" />
             </Link>
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/projects"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
+              className="group inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
             >
-              View Our Work
+              <AnimatedFlipText text="View Our Work" />
             </Link>
           </motion.div>
         </motion.div>

@@ -8,7 +8,7 @@ export function StorySection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
 
   return (
-    <section ref={ref} className="bg-background py-0 md:py-12 mb-20!">
+    <section ref={ref} className="bg-background py-0 md:py-6 mb-20!">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Image */}

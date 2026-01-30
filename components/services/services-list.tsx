@@ -93,9 +93,12 @@ export function ServicesList() {
 
                       <Link
                         href="/contact"
-                        className="mt-6 inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light"
+                        className="group relative mt-6 inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-secondary px-8 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary/90 hover:scale-105"
                       >
-                        Get a Quote
+                        <div className="relative flex flex-col items-center transition-transform duration-500 group-hover:-translate-y-full">
+                          <span className="flex h-12 items-center">Get a Quote</span>
+                          <span className="absolute top-full flex h-12 items-center">Get a Quote</span>
+                        </div>
                       </Link>
                     </div>
                   </motion.div>

@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { services } from "@/lib/data/services"
+import { AnimatedFlipText } from "@/components/ui/animated-flip-text"
 
 export function ServicesPreview() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -101,9 +102,9 @@ export function ServicesPreview() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center justify-center rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light hover:scale-105"
+            className="group inline-flex items-center justify-center rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light hover:scale-105"
           >
-            View All Services
+            <AnimatedFlipText text="View All Services" />
           </Link>
         </motion.div>
       </div>

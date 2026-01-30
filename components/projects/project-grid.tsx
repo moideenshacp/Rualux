@@ -25,9 +25,9 @@ export function ProjectGrid() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Filter */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <ProjectFilter
             activeCategory={activeCategory}
@@ -64,7 +64,7 @@ export function ProjectGrid() {
                   </div>
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/90 via-primary/40 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/90 via-primary/40 to-transparent p-6 opacity-100 lg:opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100">
                     <span className="text-xs font-medium uppercase tracking-wider text-secondary">
                       {project.category}
                     </span>
@@ -76,8 +76,8 @@ export function ProjectGrid() {
                     </p>
                   </div>
 
-                  {/* Always visible info */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/70 to-transparent p-4 transition-opacity duration-300 group-hover:opacity-0">
+                  {/* Always visible info (only on desktop where overlay is hidden) */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/70 to-transparent p-4 transition-opacity duration-300 opacity-0 lg:opacity-100 lg:group-hover:opacity-0">
                     <h3 className="text-lg font-semibold text-primary-foreground">
                       {project.title}
                     </h3>
