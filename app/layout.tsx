@@ -4,6 +4,7 @@ import { Urbanist } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { LoadingScreen } from "@/components/layout/loading-screen"
+import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${urbanist.variable} font-sans antialiased`}>
         <LoadingScreen />
         {children}
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>
