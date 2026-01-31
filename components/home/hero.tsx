@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { useRef, useState, useEffect } from "react"
@@ -21,7 +21,7 @@ export function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length)
-    }, 2000)
+    }, 3000)
     return () => clearInterval(timer)
   }, [])
 
@@ -30,11 +30,18 @@ export function Hero() {
     offset: ["start start", "end start"]
   })
 
-  // Tighter scroll transformations
-  const overlayOpacity = useTransform(scrollYProgress, [0.5, 0.9], [0, 1])
-  const contentScale = useTransform(scrollYProgress, [0, 1], [1, 0.9])
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"])
+  // Butter smooth inertial scroll
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 40,
+    restDelta: 0.001
+  })
+
+  // Tighter scroll transformations using smooth progress
+  const overlayY = useTransform(smoothProgress, [0.3, 0.95], ["100%", "0%"])
+  const contentScale = useTransform(smoothProgress, [0, 1], [1, 0.9])
+  const contentOpacity = useTransform(smoothProgress, [0, 0.7], [1, 0])
+  const bgY = useTransform(smoothProgress, [0, 1], ["0%", "20%"])
 
   return (
     <section
@@ -68,10 +75,10 @@ export function Hero() {
           </AnimatePresence>
         </div>
 
-        {/* Scroll Progress Guard Overlay */}
+        {/* Sliding Curtain Overlay (From Bottom to Top) */}
         <motion.div
-          className="absolute inset-0 z-20 bg-black pointer-events-none"
-          style={{ opacity: overlayOpacity }}
+          className="absolute inset-0 z-20 bg-black pointer-events-none shadow-[0_-20px_850px_rgba(0,0,0,1)] border-t border-white/5"
+          style={{ y: overlayY }}
         />
 
         {/* Content Section */}
@@ -155,7 +162,7 @@ export function Hero() {
                 className="absolute inset-0 bg-secondary"
                 initial={false}
                 animate={{ width: currentImage === index ? "100%" : "0%" }}
-                transition={{ duration: currentImage === index ? 2 : 0.3 }}
+                transition={{ duration: currentImage === index ? 3 : 0.3 }}
               />
             </button>
           ))}
