@@ -47,7 +47,7 @@ export function CTASection() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center rounded-lg bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-300 hover:bg-secondary-light"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
             >
               <AnimatedFlipText text="Start Your Project" />
             </Link>
@@ -55,7 +55,7 @@ export function CTASection() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/projects"
-              className="group inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
+              className="group inline-flex items-center justify-center rounded-full border border-white/40 px-8 py-4 text-sm font-semibold text-white transition-all duration-500 hover:bg-white hover:text-black hover:border-white"
             >
               <AnimatedFlipText text="View Our Work" />
             </Link>

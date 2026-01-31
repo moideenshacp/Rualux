@@ -66,7 +66,7 @@ export function Header() {
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <Link href="/" className="group flex items-center gap-2">
-                <div className="relative h-10 w-32">
+                <div className="relative h-11 w-36">
                   <Image
                     src="/Rualux-logo.png"
                     alt="Rualux Logo"

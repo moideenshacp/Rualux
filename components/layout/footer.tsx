@@ -19,6 +19,8 @@ import {
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { BsTwitterX } from "react-icons/bs";
+
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -41,7 +43,7 @@ const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: BsTwitterX, href: "#", label: "Twitter" },
 ]
 
 export function Footer() {
@@ -78,9 +80,9 @@ export function Footer() {
                   className="object-contain object-left"
                 />
               </div>
-              <span className="text-xl font-bold tracking-tight text-white">
+              {/* <span className="text-xl font-bold tracking-tight text-white">
                 Rualux
-              </span>
+              </span> */}
             </div>
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80">
               Award-winning interior design studio crafting exceptional spaces

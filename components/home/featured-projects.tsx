@@ -136,7 +136,7 @@ export function FeaturedProjects() {
         >
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
           >
             <AnimatedFlipText text="View All Projects" />
             <ArrowRight

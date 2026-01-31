@@ -10,6 +10,7 @@ import { StickyCTA } from "@/components/ui/sticky-cta"
 const urbanist = Urbanist({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  // style: ["normal", "italic"],
   variable: "--font-urbanist"
 });
 

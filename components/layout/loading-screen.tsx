@@ -34,82 +34,38 @@ export function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-primary"
+          className="fixed inset-0 z-100 flex flex-col items-center justify-center bg-primary"
         >
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 1.1, opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ scale: 1.05, opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center gap-8"
+            className="flex flex-col items-center gap-4"
           >
-            <div className="relative flex items-center justify-center">
-              <motion.div
-                className="h-24 w-24 rounded-full border-2 border-secondary/30"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+            {/* Rualux Letter Logo */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <Image
+                src="/rualux-letter.png"
+                alt="Rualux Letter"
+                width={80}
+                height={80}
+                className="object-contain"
               />
-              <motion.div
-                className="absolute h-16 w-16 rounded-full border-4 border-secondary"
-                animate={{
-                  rotate: 360,
-                  boxShadow: [
-                    "0 0 0 0 rgba(90, 5, 5, 0.4)",
-                    "0 0 20px 0 rgba(90, 5, 5, 0.2)",
-                    "0 0 0 0 rgba(90, 5, 5, 0.4)",
-                  ]
-                }}
-                transition={{
-                  rotate: { duration: 2, repeat: Infinity, ease: "linear" },
-                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-                }}
-              />
-              <div className="absolute flex items-center justify-center">
-                <Image
-                  src="/rualux-letter.png"
-                  alt="R"
-                  width={44}
-                  height={44}
-                  className="object-contain"
-                />
-              </div>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col items-center gap-2">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="relative h-12 w-48"
-              >
-                <Image
-                  src="/Rualux-logo.png"
-                  alt="Rualux"
-                  fill
-                  className="object-contain brightness-0 invert"
-                />
-              </motion.div>
+            {/* Horizontal Line below Letter Image */}
+            <div className="w-24 overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
-                transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
-                className="h-[1px] bg-secondary/50"
+                transition={{ delay: 0.5, duration: 1.2, ease: "easeInOut" }}
+                className="h-[1.5px] bg-secondary mx-auto"
               />
-              {/* <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="text-[10px] tracking-[0.4em] text-white/50 uppercase"
-              >
-                Design & Build
-              </motion.p> */}
             </div>
           </motion.div>
         </motion.div>
