@@ -155,7 +155,7 @@ export function Hero() {
                 className="absolute inset-0 bg-secondary"
                 initial={false}
                 animate={{ width: currentImage === index ? "100%" : "0%" }}
-                transition={{ duration: currentImage === index ? 6 : 0.3 }}
+                transition={{ duration: currentImage === index ? 2 : 0.3 }}
               />
             </button>
           ))}
