@@ -71,10 +71,7 @@ export function Header() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          isScrolled && !isMenuOpen
-            ? "bg-background/80 backdrop-blur-xl shadow-md py-3"
-            : "bg-transparent py-5"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-5"
         )}
       >
         <div className="mx-auto max-w-7xl">

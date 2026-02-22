@@ -25,20 +25,20 @@ export function FeaturedProjects() {
       ref={ref}
       className="relative z-10 bg-black"
       style={{
-        maskImage: 'linear-gradient(to bottom, transparent, black 30%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 30%)',
+        maskImage: 'linear-gradient(to bottom, transparent, black 200px)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 200px)',
       }}
     >
       {/* ── Massive soft foggy overlap (Melt effect) ── */}
       <motion.div
         style={{ opacity: fogOpacity, zIndex: 10 }}
-        className="absolute bottom-full left-0 w-full h-[60vh] bg-linear-to-t from-black to-transparent pointer-events-none"
+        className="absolute bottom-full left-0 w-full h-[35vh] bg-linear-to-t from-black to-transparent pointer-events-none"
       />
 
       {/* Subtle black overlay for texture */}
-      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
-      <div className="mx-auto max-w-[1450px] px-4 pt-52 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1450px] px-4 pt-64 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

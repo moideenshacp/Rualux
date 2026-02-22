@@ -56,37 +56,48 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* ── Hero content (fades away quickly on scroll) ── */}
-      <motion.div
-        style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center"
+      <div
+        className="relative z-20 flex h-full flex-col items-center justify-end px-6 text-center pb-24"
       >
-        <div className="flex flex-col items-center gap-4">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-[10px] font-light uppercase tracking-[0.6em] text-white/50"
+        <div className="flex flex-col items-center gap-4 max-w-4xl">
+          <div
+            className="text-[10px] uppercase tracking-[0.5em] text-white/70 font-light drop-shadow-md"
           >
-            Design • Build • Transform
-          </motion.span>
-          <h1
-            className="text-4xl font-extralight tracking-tight text-white sm:text-6xl lg:text-7xl"
+            Architecture • Interiors • Lifestyle
+          </div>
+
+          <p
+            className="max-w-3xl text-sm md:text-xl font-light tracking-[0.02em] text-white leading-relaxed italic drop-shadow-md"
             style={{ fontFamily: "var(--font-cormorant), serif" }}
           >
-            Crafting Spaces.<br />Telling Stories.
-          </h1>
+            &quot;Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.&quot;
+          </p>
         </div>
-      </motion.div>
+      </div>
 
       {/* ── Scroll prompt ── */}
-      <motion.div
+      {/* <motion.div
         style={{ opacity: contentOpacity }}
-        className="absolute bottom-12 left-1/2 z-20 -translate-x-1/2 flex flex-col items-center gap-3"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 flex flex-col items-center gap-4"
       >
-        <span className="text-[9px] uppercase tracking-[0.4em] text-white/40">Scroll</span>
-        <div className="h-10 w-px bg-white/20" />
-      </motion.div>
+        <span className="text-[10px] uppercase tracking-[0.6em] text-white/30 font-light translate-x-[0.3em]">Scroll</span>
+        <div className="relative h-12 w-px bg-white/10 overflow-hidden">
+          <motion.div
+            animate={{
+              y: ["-100%", "100%"]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute top-0 left-0 h-full w-full bg-linear-to-b from-transparent via-white/40 to-transparent"
+          />
+        </div>
+      </motion.div> */}
     </section>
   )
 }
