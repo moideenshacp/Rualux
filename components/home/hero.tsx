@@ -41,7 +41,7 @@ export function Hero() {
       {/* ── Background Image ── */}
       <div className="absolute inset-0">
         <motion.div
-          style={{ scale }}
+          // style={{ scale }}
           className="absolute inset-0 h-full w-full"
         >
           <div
