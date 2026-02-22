@@ -49,14 +49,10 @@ export function Hero() {
             style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
           />
           {/* Base cinematic overlays */}
-          <div className="absolute inset-0 bg-black/10" />
+          <div className="absolute inset-0 bg-black/30" />
           <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60" />
 
-          {/* Dynamic Shadow Overlay that deepens on scroll */}
-          <motion.div
-            style={{ opacity: shadowOpacity }}
-            className="absolute inset-0 bg-black z-10"
-          />
+
         </motion.div>
       </div>
 
