@@ -1,12 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { motion, useScroll, useMotionValueEvent, type Variants } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -17,222 +15,261 @@ const navLinks = [
   { href: "/contact", label: "Contact Us" },
 ]
 
+// ── Custom variants: explicitly typed as Variants to fix index signature error ──
+const itemVariants: Variants = {
+  closed: (_i: number) => ({ opacity: 0, y: 40 }),
+  open: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.35 + i * 0.09, duration: 0.55, ease: [0.33, 1, 0.68, 1] },
+  }),
+}
+
+const lineVariants: Variants = {
+  closed: (_i: number) => ({ scaleX: 0, opacity: 0 }),
+  open: (i: number) => ({
+    scaleX: 1,
+    opacity: 1,
+    transition: { delay: 0.3 + i * 0.09, duration: 0.45, ease: "easeOut" },
+  }),
+}
+
+// ── Overlay clip-path expand / collapse ──
+const overlayVariants: Variants = {
+  closed: {
+    clipPath: "circle(0% at calc(100% - 44px) 44px)",
+    transition: { duration: 0.65, ease: [0.76, 0, 0.24, 1] },
+  },
+  open: {
+    clipPath: "circle(170% at calc(100% - 44px) 44px)",
+    transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
+  },
+}
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isHidden, setIsHidden] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
 
   const { scrollY } = useScroll()
+  useMotionValueEvent(scrollY, "change", (latest) => setIsScrolled(latest > 50))
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() || 0
+  // Lock body scroll when overlay is open
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : ""
+    return () => { document.body.style.overflow = "" }
+  }, [isMenuOpen])
 
-    // Set scrolled state for background change
-    if (latest > 50 && !isScrolled) setIsScrolled(true)
-    if (latest <= 50 && isScrolled) setIsScrolled(false)
-
-    // Handle hide/show on scroll
-    if (latest > previous && latest > 150) {
-      setIsHidden(true)
-    } else {
-      setIsHidden(false)
-    }
-  })
+  const closeMenu = () => setIsMenuOpen(false)
+  const toggleMenu = () => setIsMenuOpen((p) => !p)
 
   return (
     <>
+      {/* ════════════════ Header Bar ════════════════ */}
       <motion.header
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-100%" },
-        }}
-        // animate={isHidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className={cn(
-          "fixed top-0 left-0 right-0 transition-all duration-500",
-          isMobileMenuOpen ? "z-70" : "z-50",
-          isScrolled
-            ? "bg-background/70 backdrop-blur-xl shadow-lg py-3"
-            : "bg-transparent py-6"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          isScrolled && !isMenuOpen
+            ? "bg-background/80 backdrop-blur-xl shadow-md py-3"
+            : "bg-transparent py-5"
         )}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
           <nav className="flex items-center justify-between">
-            {/* Logo */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+
+            {/* Logo ── always above overlay (z-110) */}
+            <Link
+              href="/"
+              onClick={closeMenu}
+              className="relative z-110 flex items-center"
             >
-              <Link href="/" className="group flex items-center gap-2">
-                <div className="relative h-11 w-36">
-                  <Image
-                    src="/Rualux-logo.png"
-                    alt="Rualux Logo"
-                    fill
-                    className={cn(
-                      "object-contain transition-all duration-300",
-                      !isScrolled && !isMobileMenuOpen && "brightness-0 invert"
-                    )}
-                    priority
-                  />
-                </div>
-              </Link>
-            </motion.div>
+              <div className="relative -ml-16 h-10 w-32">
+                <Image
+                  src="/Rualux-logo.png"
+                  alt="Rualux Logo"
+                  fill
+                  className={cn(
+                    "object-contain transition-all duration-500",
+                    isMenuOpen || !isScrolled ? "brightness-0 invert" : ""
+                  )}
+                  priority
+                />
+              </div>
+            </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden items-center gap-8 md:flex">
-              {navLinks.map((link, index) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.2 + index * 0.1,
-                    ease: "easeOut"
-                  }}
-                >
-                  <Link
-                    href={link.href}
-                    className="relative px-3 py-2 text-sm font-medium transition-colors"
-                  >
-                    <span className={cn(
-                      "relative z-10 transition-colors duration-300",
-                      isScrolled
-                        ? "text-muted-foreground hover:text-foreground"
-                        : "text-white/70 hover:text-white",
-                      pathname === link.href && (isScrolled ? "text-foreground" : "text-white")
-                    )}>
-                      {link.label}
-                    </span>
-
-                    {/* Active Indicator */}
-                    {pathname === link.href && (
-                      <motion.div
-                        layoutId="activeNav"
-                        className="absolute inset-x-0 -bottom-2 h-0.5 bg-secondary"
-                        transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                      />
-                    )}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Mobile Menu Button */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="md:hidden"
+            {/* ── Hamburger / Close toggle ── */}
+            <button
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              className="relative -mr-16 cursor-pointer z-110 flex h-10 w-10 flex-col items-center justify-center gap-0 focus:outline-none group"
             >
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={cn(
-                  "relative z-[80] flex h-12 w-12 items-center justify-center rounded-full md:hidden transition-all duration-300",
-                  isMobileMenuOpen
-                    ? "text-white bg-white/10"
-                    : isScrolled
-                      ? "text-foreground bg-black/5"
-                      : "text-white bg-black/40 shadow-lg"
-                )}
-                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              >
-                <div className="relative h-6 w-6">
-                  <motion.span
-                    animate={isMobileMenuOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -6 }}
-                    className="absolute left-0 top-1/2 block h-0.5 w-6 bg-current transition-transform"
-                  />
-                  <motion.span
-                    animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                    className="absolute left-0 top-1/2 block h-0.5 w-6 bg-current transition-all"
-                  />
-                  <motion.span
-                    animate={isMobileMenuOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 6 }}
-                    className="absolute left-0 top-1/2 block h-0.5 w-6 bg-current transition-transform"
-                  />
-                </div>
-              </Button>
-            </motion.div>
+              {/* Top bar */}
+              <motion.span
+                animate={
+                  isMenuOpen
+                    ? { rotate: 45, y: 0, width: "28px", backgroundColor: "#ffffff" }
+                    : { rotate: 0, y: -7, width: "28px", backgroundColor: "#ffffff" }
+                }
+                transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
+                className="absolute block h-0.5 rounded-full"
+                style={{ transformOrigin: "center" }}
+              />
+              {/* Middle bar — fades out on open */}
+              <motion.span
+                animate={
+                  isMenuOpen
+                    ? { opacity: 0, scaleX: 0 }
+                    : { opacity: 1, scaleX: 1, width: "20px", backgroundColor: "#ffffff" }
+                }
+                transition={{ duration: 0.2 }}
+                className="absolute block h-0.5 rounded-full"
+                style={{ transformOrigin: "center" }}
+              />
+              {/* Bottom bar */}
+              <motion.span
+                animate={
+                  isMenuOpen
+                    ? { rotate: -45, y: 0, width: "28px", backgroundColor: "#ffffff" }
+                    : { rotate: 0, y: 7, width: "28px", backgroundColor: "#ffffff" }
+                }
+                transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
+                className="absolute block h-0.5 rounded-full"
+                style={{ transformOrigin: "center" }}
+              />
+            </button>
           </nav>
         </div>
       </motion.header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black md:hidden"
-          >
-            {/* Animated Background Pattern */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,_rgba(90,5,5,0.4)_0%,_transparent_50%)]" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,_rgba(90,5,5,0.3)_0%,_transparent_40%)]" />
-            </div>
+      {/* ════════════════ Fullscreen Overlay ════════════════ */}
+      <motion.div
+        variants={overlayVariants}
+        initial="closed"
+        animate={isMenuOpen ? "open" : "closed"}
+        className="fixed inset-0 z-100 bg-[#0a0a0a]"
+        style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}
+      >
+        {/* Ambient glow accents */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute right-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(180,150,100,0.07)_0%,transparent_70%)]" />
+          <div className="absolute bottom-[-5%] left-[-5%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(180,150,100,0.05)_0%,transparent_70%)]" />
+        </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
-              className="relative z-10 flex flex-col items-center gap-10 px-6 text-center"
-            >
-              <div className="flex flex-col gap-8">
-                {navLinks.map((link, index) => (
+        {/* ── Top strip: "Menu" label  +  animated X close button ── */}
+        <div className="relative z-10 flex items-center justify-between px-8 pt-6 sm:px-12">
+          <motion.span
+            animate={isMenuOpen ? { opacity: 1, transition: { delay: 0.45, duration: 0.4 } } : { opacity: 0 }}
+            className="select-none font-light text-xs uppercase tracking-[0.35em] text-white/30"
+          >
+
+          </motion.span>
+
+          {/* Animated X / close button inside overlay */}
+          <button
+            onClick={closeMenu}
+            aria-label="Close menu"
+            className="group cursor-pointer relative flex h-10 w-10 items-center justify-center focus:outline-none"
+          >
+            {/* Spinning ring around X */}
+            <motion.span
+              animate={isMenuOpen
+                ? { scale: 1, opacity: 1, rotate: 90, transition: { delay: 0.55, duration: 0.5, ease: "easeOut" } }
+                : { scale: 0.6, opacity: 0, rotate: 0 }
+              }
+              className="absolute inset-0 rounded-full border transition-colors duration-300"
+            />
+            {/* X lines */}
+            <motion.span
+              animate={isMenuOpen
+                ? { rotate: 45, opacity: 1, transition: { delay: 0.5, duration: 0.35, ease: [0.76, 0, 0.24, 1] } }
+                : { rotate: 0, opacity: 0 }
+              }
+              className="absolute block h-0.5 w-5 rounded-full bg-white/70 group-hover:bg-white transition-colors duration-300"
+            />
+            <motion.span
+              animate={isMenuOpen
+                ? { rotate: -45, opacity: 1, transition: { delay: 0.5, duration: 0.35, ease: [0.76, 0, 0.24, 1] } }
+                : { rotate: 0, opacity: 0 }
+              }
+              className="absolute block h-0.5 w-5 rounded-full bg-white/70 group-hover:bg-white transition-colors duration-300"
+            />
+          </button>
+        </div>
+
+        {/* ── Navigation links ── */}
+        <div className="relative z-10 flex h-full flex-col items-start justify-center px-10 pb-24 sm:px-20 lg:px-32">
+          <nav className="w-full max-w-2xl">
+
+            {navLinks.map((link, i) => {
+              const isActive = pathname === link.href
+              return (
+                <div key={link.href} className="overflow-hidden">
+                  {/* Divider line */}
                   <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
+                    custom={i}
+                    variants={lineVariants}
+                    initial="closed"
+                    animate={isMenuOpen ? "open" : "closed"}
+                    className="h-px w-full origin-left bg-white/10"
+                  />
+
+                  {/* Nav item */}
+                  <motion.div
+                    custom={i}
+                    variants={itemVariants}
+                    initial="closed"
+                    animate={isMenuOpen ? "open" : "closed"}
+                    className="group"
                   >
                     <Link
                       href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={cn(
-                        "relative text-2xl font-semibold transition-colors hover:text-secondary",
-                        pathname === link.href ? "text-secondary" : "text-foreground"
-                      )}
+                      onClick={closeMenu}
+                      className="flex items-baseline gap-5 py-5 sm:py-6 select-none"
                     >
-                      {link.label}
-                      {pathname === link.href && (
-                        <motion.div
-                          layoutId="mobileActive"
-                          className="absolute -bottom-2 left-0 right-0 mx-auto h-1 w-12 rounded-full bg-secondary"
-                        />
-                      )}
+                      {/* Index / active dash */}
+                      <span
+                        className={cn(
+                          "w-7 font-light text-sm transition-colors duration-300",
+                          isActive
+                            ? "text-[#c4a96a]"
+                            : "text-white/20 group-hover:text-white/50"
+                        )}
+                      >
+                        {"—"}
+                      </span>
+
+                      {/* Label */}
+                      <span
+                        className={cn(
+                          "text-4xl font-extralight tracking-tight transition-all duration-300 sm:text-4xl",
+                          "group-hover:translate-x-4 group-hover:text-[#c4a96a]",
+                          isActive ? "text-[#c4a96a]" : "text-white/80"
+                        )}
+                      // style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+                      >
+                        {link.label}
+                      </span>
                     </Link>
                   </motion.div>
-                ))}
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="mt-10"
-              >
-                <div className="flex h-12 w-12 items-center justify-center">
-                  <Image
-                    src="/rualux-letter.png"
-                    alt="R"
-                    width={56}
-                    height={56}
-                    className="object-contain"
-                  />
                 </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              )
+            })}
+
+            {/* Bottom divider */}
+            <motion.div
+              custom={navLinks.length}
+              variants={lineVariants}
+              initial="closed"
+              animate={isMenuOpen ? "open" : "closed"}
+              className="h-px w-full origin-left bg-white/10"
+            />
+          </nav>
+
+        </div>
+      </motion.div>
     </>
   )
 }

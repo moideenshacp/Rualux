@@ -40,7 +40,7 @@ export function ProjectsHero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/80"
           >
-            Explore our collection of residential, commercial, and hospitality 
+            Explore our collection of residential, commercial, and hospitality
             projects that showcase our dedication to exceptional design.
           </motion.p>
         </motion.div>

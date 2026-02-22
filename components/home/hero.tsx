@@ -86,7 +86,7 @@ export function Hero() {
           style={{ scale: contentScale, opacity: contentOpacity }}
           className="relative z-30 flex h-full flex-col items-center justify-center px-4 text-center"
         >
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -95,19 +95,18 @@ export function Hero() {
             <span className="text-sm font-medium uppercase tracking-[0.5em] text-secondary">
               Luxury Architecture & Design
             </span>
-          </motion.div>
+          </motion.div> */}
 
-          <motion.h1
+          {/* <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="max-w-5xl text-4xl font-bold leading-[1.1] text-white sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-balance"
+            className="max-w-5xl -mt-72 text-4xl font-medium leading-[1.1] text-white sm:text-6xl md:text-7xl lg:text-3xl tracking-tight text-balance"
           >
-            Crafting Spaces That <br />
-            <span className="text-secondary italic">Define You.</span>
-          </motion.h1>
+            Legacy that Leads Innovation
+          </motion.h1> */}
 
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -115,13 +114,13 @@ export function Hero() {
           >
             Award-winning interior design and architecture studio specializing in
             bespoke residential and commercial transformations.
-          </motion.p>
+          </motion.p> */}
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="mt-12 flex flex-col gap-6 sm:flex-row items-center"
+            className="mt-96 flex flex-col gap-6 sm:flex-row items-center"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -146,7 +145,7 @@ export function Hero() {
                 <AnimatedFlipText text="Book a Consultation" />
               </Link>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Luxury Pagination Indicators */}

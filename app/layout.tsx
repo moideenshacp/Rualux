@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Urbanist } from 'next/font/google'
+import { Urbanist, Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { LoadingScreen } from "@/components/layout/loading-screen"
@@ -10,8 +10,14 @@ import { StickyCTA } from "@/components/ui/sticky-cta"
 const urbanist = Urbanist({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  // style: ["normal", "italic"],
-  variable: "--font-urbanist"
+  variable: "--font-urbanist",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
 });
 
 export const metadata: Metadata = {
@@ -61,7 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-auto">
-      <body className={`${urbanist.variable} font-sans antialiased`}>
+      <body className={`${urbanist.variable} ${cormorant.variable} font-sans antialiased`}>
         <LoadingScreen />
         {children}
         <WhatsAppButton />
