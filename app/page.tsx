@@ -12,14 +12,21 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="relative bg-black">
         <Hero />
-        <FeaturedProjects />
-        <ServicesPreview />
-        <Testimonials />
-        <CTASection />
+
+        {/* Spacer to push content down so hero is visible initially */}
+        <div className="h-screen pointer-events-none" />
+
+        {/* Content sections that will slide OVER the fixed hero */}
+        <div className="relative z-10 bg-black">
+          <FeaturedProjects />
+          <ServicesPreview />
+          <Testimonials />
+          <CTASection />
+          <Footer />
+        </div>
       </main>
-      <Footer />
     </>
   )
 }

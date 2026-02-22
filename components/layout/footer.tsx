@@ -61,7 +61,7 @@ export function Footer() {
   }
 
   return (
-    <footer ref={ref} className="bg-primary text-primary-foreground">
+    <footer ref={ref} className="bg-background text-foreground border-t border-white/5">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}

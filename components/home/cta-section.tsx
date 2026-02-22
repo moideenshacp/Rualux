@@ -20,7 +20,7 @@ export function CTASection() {
           backgroundImage: "url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&q=80')",
         }}
       />
-      <div className="absolute inset-0 bg-primary/80" />
+      <div className="absolute inset-0 bg-black/80" />
 
       {/* Content */}
       <motion.div

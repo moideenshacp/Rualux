@@ -17,8 +17,14 @@ export function FeaturedProjects() {
   const featuredProjects = [...projects.slice(0, 4), ...projects.slice(0, 4)]
 
   return (
-    <section ref={ref} className="bg-black shadow-[0_-50px_150px_rgba(0,0,0,1)] border-t border-white/5 2 overflow-hidden">
-      <div className="mx-auto max-w-[1450px] px-4 sm:px-6 lg:px-8">
+    <section
+      ref={ref}
+      className="relative z-10 bg-black overflow-hidden"
+    >
+      {/* ── Soft foggy overlap (Gradient transition from hero) ── */}
+      <div className="absolute top-0 left-0 shadow-inner w-full h-[40vh] bg-linear-to-t from-black via-black/90 to-transparent -translate-y-[99%] z-10" />
+
+      <div className="mx-auto max-w-[1450px] px-4 pt-24 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
