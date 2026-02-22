@@ -42,7 +42,7 @@ export function Testimonials() {
     }, [isPaused])
 
     return (
-        <section className="bg-background py-24 overflow-hidden">
+        <section className="bg-background pb-16 overflow-hidden">
             <div
                 className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"
                 onMouseEnter={() => setIsPaused(true)}

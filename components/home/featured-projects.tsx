@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Link from "next/link"
 import Image from "next/image"
@@ -16,9 +16,14 @@ export function FeaturedProjects() {
   // Double the projects to create a seamless loop
   const featuredProjects = [...projects.slice(0, 4), ...projects.slice(0, 4)]
 
-  // Fade in the foggy overlap very quickly as user scrolls
+  // Fade in the foggy overlap with an ultra-smooth spring transition
   const { scrollYProgress } = useScroll()
-  const fogOpacity = useTransform(scrollYProgress, [0, 0.05], [0, 1])
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 40,
+    damping: 45,
+    restDelta: 0.001
+  })
+  const fogOpacity = useTransform(smoothProgress, [0, 0.20], [0, 1])
 
   return (
     <section

@@ -74,7 +74,7 @@ export function Header() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-5"
         )}
       >
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto w-full px-6 md:px-12">
           <nav className="flex items-center justify-between">
 
             {/* Logo ── always above overlay (z-110) */}
@@ -83,17 +83,13 @@ export function Header() {
               onClick={closeMenu}
               className="relative z-110 flex items-center"
             >
-              <div className="relative -ml-16 h-10 w-32">
-                <Image
-                  src="/Rualux-logo.png"
-                  alt="Rualux Logo"
-                  fill
-                  className={cn(
-                    "object-contain transition-all duration-500",
-                    isMenuOpen || !isScrolled ? "brightness-0 invert" : ""
-                  )}
-                  priority
-                />
+              <div className="relative ml-2 h-10 w-32">
+                <span
+                  className="text-3xl font-extralight tracking-[0.2em] text-white"
+                  style={{ fontFamily: "var(--font-cormorant), serif" }}
+                >
+                  RUALUX
+                </span>
               </div>
             </Link>
 
@@ -101,7 +97,7 @@ export function Header() {
             <button
               onClick={toggleMenu}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              className="relative -mr-16 cursor-pointer z-110 flex h-10 w-10 flex-col items-center justify-center gap-0 focus:outline-none group"
+              className="relative cursor-pointer z-110 flex h-10 w-10 flex-col items-center justify-center gap-0 focus:outline-none group"
             >
               {/* Top bar */}
               <motion.span

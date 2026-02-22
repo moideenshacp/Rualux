@@ -23,7 +23,7 @@ export default function HomePage() {
           <FeaturedProjects />
           <ServicesPreview />
           <Testimonials />
-          <CTASection />
+          {/* <CTASection /> */}
           <Footer />
         </div>
       </main>

@@ -31,12 +31,11 @@ const quickLinks = [
 ]
 
 const services = [
-  "Residential Design",
-  "Commercial Design",
-  "Space Planning",
-  "3D Visualization",
-  "Furniture Selection",
-  "Project Management",
+  "Consultancy",
+  "Visualisation",
+  "Architecture",
+  "Interior And Exterior",
+  "Landscape",
 ]
 
 const socialLinks = [
@@ -72,12 +71,13 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3">
-              <div className="relative h-10 w-10">
+              <div className="relative -ml-3 ">
                 <Image
                   src="/rualux-letter.png"
                   alt="Rualux Letter"
-                  fill
-                  className="object-contain object-left"
+                  width={60}
+                  height={60}
+                  className="object-contain brightness-0 invert"
                 />
               </div>
               {/* <span className="text-xl font-bold tracking-tight text-white">

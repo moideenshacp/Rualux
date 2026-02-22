@@ -3,7 +3,11 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { useRef } from "react"
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80"
+const HERO_IMAGE = "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&q=80"
+// https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&q=80
+// https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&q=80
+// https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80
+// https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1920&q=80
 
 export function Hero() {
   // We track the scroll of the window to animate the fixed hero
@@ -37,7 +41,7 @@ export function Hero() {
       {/* ── Background Image ── */}
       <div className="absolute inset-0">
         <motion.div
-          style={{ scale, y }}
+          style={{ scale }}
           className="absolute inset-0 h-full w-full"
         >
           <div
