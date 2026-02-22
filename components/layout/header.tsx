@@ -142,13 +142,13 @@ export function Header() {
         variants={overlayVariants}
         initial="closed"
         animate={isMenuOpen ? "open" : "closed"}
-        className="fixed inset-0 z-100 bg-[#0a0a0a]"
+        className="fixed inset-0 z-100 bg-black"
         style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}
       >
         {/* Ambient glow accents */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute right-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(180,150,100,0.07)_0%,transparent_70%)]" />
-          <div className="absolute bottom-[-5%] left-[-5%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(180,150,100,0.05)_0%,transparent_70%)]" />
+          <div className="absolute right-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(180,150,100,0.07)_0%,transparent_20%)]" />
+          <div className="absolute bottom-[-5%] left-[-5%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(180,150,100,0.05)_0%,transparent_20%)]" />
         </div>
 
         {/* ── Top strip: "Menu" label  +  animated X close button ── */}
