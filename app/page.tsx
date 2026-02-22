@@ -19,7 +19,7 @@ export default function HomePage() {
         <div className="h-screen pointer-events-none" />
 
         {/* Content sections that will slide OVER the fixed hero */}
-        <div className="relative z-10 bg-black">
+        <div className="relative z-10">
           <FeaturedProjects />
           <ServicesPreview />
           <Testimonials />

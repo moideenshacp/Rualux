@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Link from "next/link"
 import Image from "next/image"
@@ -16,15 +16,29 @@ export function FeaturedProjects() {
   // Double the projects to create a seamless loop
   const featuredProjects = [...projects.slice(0, 4), ...projects.slice(0, 4)]
 
+  // Fade in the foggy overlap very quickly as user scrolls
+  const { scrollYProgress } = useScroll()
+  const fogOpacity = useTransform(scrollYProgress, [0, 0.05], [0, 1])
+
   return (
     <section
       ref={ref}
-      className="relative z-10 bg-black overflow-hidden"
+      className="relative z-10 bg-black"
+      style={{
+        maskImage: 'linear-gradient(to bottom, transparent, black 30%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 30%)',
+      }}
     >
-      {/* ── Soft foggy overlap (Gradient transition from hero) ── */}
-      <div className="absolute top-0 left-0 shadow-inner w-full h-[40vh] bg-linear-to-t from-black via-black/90 to-transparent -translate-y-[99%] z-10" />
+      {/* ── Massive soft foggy overlap (Melt effect) ── */}
+      <motion.div
+        style={{ opacity: fogOpacity, zIndex: 10 }}
+        className="absolute bottom-full left-0 w-full h-[60vh] bg-linear-to-t from-black to-transparent pointer-events-none"
+      />
 
-      <div className="mx-auto max-w-[1450px] px-4 pt-24 sm:px-6 lg:px-8">
+      {/* Subtle black overlay for texture */}
+      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+
+      <div className="mx-auto max-w-[1450px] px-4 pt-52 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
