@@ -36,7 +36,7 @@ export function Hero() {
      * We give it a low z-index so everything else (z-10+) slides over it.
      */
     <section
-      className="fixed top-0 left-0 z-0 h-screen w-full overflow-hidden bg-black"
+      className="fixed top-0 left-0 z-0 h-dvh w-full overflow-hidden bg-black"
     >
       {/* ── Background Image ── */}
       <div className="absolute inset-0">
