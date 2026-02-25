@@ -81,7 +81,7 @@ export function Testimonials() {
                                 <Quote className="text-secondary/20 h-12 w-12" />
                             </motion.div>
 
-                            <p className="text-lg md:text-xl text-muted-foreground italic mb-8 max-w-2xl">
+                            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
                                 "{testimonials[index].content}"
                             </p>
 

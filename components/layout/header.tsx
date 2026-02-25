@@ -83,13 +83,14 @@ export function Header() {
               onClick={closeMenu}
               className="relative z-110 flex items-center"
             >
-              <div className="relative ml-2 h-10 w-32">
-                <span
+              <div className="relative ml-2 h-10 w-48">
+                {/* <span
                   className="text-3xl font-extralight tracking-[0.2em] text-white"
                   style={{ fontFamily: "var(--font-cormorant), serif" }}
                 >
                   RUALUX
-                </span>
+                </span> */}
+                <Image src="/Rualux-logo.png" alt="Logo" width={600} height={600} />
               </div>
             </Link>
 

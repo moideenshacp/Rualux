@@ -57,7 +57,7 @@ export function Hero() {
       </div>
 
       <div
-        className="relative z-20 flex h-full flex-col items-center justify-end px-6 text-center pb-24"
+        className="relative z-20 flex h-full flex-col items-center justify-end px-6 text-center pb-28"
       >
         <div className="flex flex-col items-center gap-4 max-w-4xl">
           <div
@@ -67,8 +67,7 @@ export function Hero() {
           </div>
 
           <p
-            className="max-w-3xl text-sm md:text-xl font-light tracking-[0.02em] text-white leading-relaxed italic drop-shadow-md"
-            style={{ fontFamily: "var(--font-cormorant), serif" }}
+            className="max-w-3xl text-sm md:text-xl font-light tracking-[0.02em] text-white leading-relaxed drop-shadow-md"
           >
             &quot;Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.&quot;
           </p>
