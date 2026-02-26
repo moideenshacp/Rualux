@@ -132,4 +132,4 @@ export const projects: Project[] = [
   }
 ]
 
-export const projectCategories = ["All", "Residential", "Commercial", "Hospitality"]
+export const projectCategories = ["All", "Residential", "Commercial"]

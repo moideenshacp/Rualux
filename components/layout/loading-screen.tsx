@@ -55,10 +55,10 @@ export function LoadingScreen() {
               {phase === 0 && (
                 <motion.div
                   key="logo"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -60 }}
-                  transition={{ duration: 1, ease: "easeInOut" }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, x: -20, filter: "blur(10px)" }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
                   className="absolute"
                 >
                   <Image
@@ -73,12 +73,13 @@ export function LoadingScreen() {
 
               {phase === 2 && (
                 <motion.div
-                  key="name"
-                  className="flex items-center justify-center"
+                  key="logo-revealed"
+                  className="relative h-24 w-full md:h-24 md:w-96"
                 >
-                  {"RUALUX".split("").map((char, i) => (
-                    <motion.span
+                  {[...Array(8)].map((_, i) => (
+                    <motion.div
                       key={i}
+                      className="absolute inset-0"
                       initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                       transition={{
@@ -86,11 +87,18 @@ export function LoadingScreen() {
                         delay: i * 0.1,
                         ease: [0.22, 1, 0.36, 1]
                       }}
-                      className="text-4xl md:text-7xl tracking-[0.2em] font-extralight text-white"
-                      style={{ fontFamily: "var(--font-cormorant), serif" }}
+                      style={{
+                        clipPath: `inset(0 ${100 - (100 / 8) * (i + 1)}% 0 ${(100 / 8) * i}%)`,
+                      }}
                     >
-                      {char}
-                    </motion.span>
+                      <Image
+                        src="/Rualux-logo.png"
+                        alt="Rualux Logo"
+                        fill
+                        className="object-contain brightness-0 invert"
+                        priority
+                      />
+                    </motion.div>
                   ))}
                 </motion.div>
               )}

@@ -7,7 +7,7 @@ export function MapSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
 
   return (
-    <section ref={ref} className="bg-muted py-20">
+    <section ref={ref} className="bg-background py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,7 @@ export function MapSection() {
           className="mt-10 overflow-hidden rounded-2xl shadow-lg"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343!2d-74.00594878459424!3d40.74076397932881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a3f71e8c21%3A0x7f5715d5e52c3533!2sFlatiron%20Building!5e0!3m2!1sen!2sus!4v1640100000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.626458535188!2d75.833501675048!3d11.251912688924036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6593a3a69a081%3A0xe542a2082269c5e0!2sHiLITE%20Business%20Park!5e0!3m2!1sen!2sin!4v1740572621000!5m2!1sen!2sin"
             width="100%"
             height="450"
             style={{ border: 0 }}

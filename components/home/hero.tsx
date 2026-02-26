@@ -1,7 +1,6 @@
 "use client"
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { useRef } from "react"
+import { motion, useScroll, useSpring } from "framer-motion"
 
 const HERO_IMAGE = "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&q=80"
 // https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&q=80
@@ -18,17 +17,6 @@ export function Hero() {
     damping: 30,
     restDelta: 0.001
   })
-
-  // FADE OUT HERO CONTENT FAST: It should be fully invisible by 20% of the page scroll
-  const contentOpacity = useTransform(smoothProgress, [0, 0.2], [1, 0])
-  const contentY = useTransform(smoothProgress, [0, 0.2], ["0%", "-10%"])
-
-  // Subtle scaling and parallax on the background image
-  const scale = useTransform(smoothProgress, [0, 0.5], [1.05, 0.9])
-  const y = useTransform(smoothProgress, [0, 0.5], ["0%", "5%"])
-
-  // Dynamic shadow deepening as user scrolls
-  const shadowOpacity = useTransform(smoothProgress, [0, 0.4], [0.2, 0.95]);
 
   return (
     /* 
@@ -57,7 +45,7 @@ export function Hero() {
       </div>
 
       <div
-        className="relative z-20 flex h-full flex-col items-center justify-end px-6 text-center pb-28"
+        className="relative z-20 flex h-full flex-col items-center justify-end px-6 text-center pb-24"
       >
         <div className="flex flex-col items-center gap-4 max-w-4xl">
           <div

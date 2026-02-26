@@ -3,35 +3,36 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { BsTwitterX } from "react-icons/bs"
 
 const contactDetails = [
   {
     icon: MapPin,
     title: "Visit Our Studio",
-    details: ["123 Design Avenue", "New York, NY 10001"],
+    details: ["RUALUX - DESIGN AND BUILD", "Door No. 2406, 4th Floor, Phase 2,", "Hi Lite Business Park, Palazhi,", "Kozhikode, Kerala, India - 673014"],
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+    details: ["+91 9656919676", "+91 9567967696"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["hello@luxeinteriors.com", "projects@luxeinteriors.com"],
+    details: ["rualuxdesigner@gmail.com", "info@rualux.com"],
   },
   {
     icon: Clock,
     title: "Business Hours",
-    details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 4:00 PM"],
+    details: ["Mon - Sat: 9:30 AM - 5:30 PM"],
   },
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Facebook, href: "https://www.facebook.com/61583463612949/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/rualux?igsh=MWJvZGt6eTBjZW42bA%3D%3D&utm_source=qr", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/rualux/", label: "LinkedIn" },
+  { icon: BsTwitterX, href: "https://x.com/rualux", label: "Twitter" },
 ]
 
 export function ContactInfo() {
@@ -84,6 +85,8 @@ export function ContactInfo() {
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={social.label}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition-all hover:bg-secondary hover:text-secondary-foreground"
             >

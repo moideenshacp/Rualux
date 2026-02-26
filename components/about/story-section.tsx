@@ -44,40 +44,45 @@ export function StorySection() {
               A Legacy of Design Excellence
             </h2>
 
-            <div className="mt-6 space-y-4 text-muted-foreground">
+            <div className="mt-6 space-y-6 text-muted-foreground text-lg font-light leading-relaxed">
               <p>
-                Founded in 2005 by Alexandra Chen, Rualux began as a small
-                studio with a big vision: to create spaces that not only look
-                beautiful but truly enhance the lives of those who inhabit them.
+                Rualux is a premium interior design studio specialising in high-end residential and commercial environments, delivering spaces of exceptional refinement and enduring elegance. We craft interiors defined by elevated materiality, measured luxury, and architectural precision, creating environments that feel both artfully composed and intuitively functional.
               </p>
               <p>
-                Over nearly two decades, we&apos;ve grown from a team of three passionate
-                designers to an award-winning firm with over 500 completed projects
-                spanning residential, commercial, and hospitality sectors across
-                North America and Europe.
-              </p>
-              <p>
-                Our approach combines timeless design principles with innovative
-                techniques, always keeping our clients&apos; unique needs and
-                aspirations at the heart of every project. We believe that great
-                design should be both beautiful and functional, creating spaces
-                that inspire and endure.
+                At Rualux, design is more than an aesthetic pursuit—it is a philosophy rooted in clarity, craftsmanship, and the seamless integration of form and purpose. Every project is approached with a deep understanding of spatial flow, proportion, and sensory experience, ensuring that each interior is not only visually striking but deeply resonant. Our work embodies a balance of aesthetic purity, spatial intelligence, and bespoke detail, resulting in spaces that are meticulously tailored and profoundly distinctive.
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-10">
-              <div>
-                <span className="text-3xl font-bold text-secondary">500+</span>
-                <p className="mt-1 text-sm text-muted-foreground">Projects Completed</p>
+            {/* Stats Grid from Screenshot */}
+            <div className="mt-16 grid grid-cols-2 border-t border-white/10 pt-12">
+              {/* Row 1, Col 1 */}
+              <div className="border-r border-white/10 pb-12 pr-6">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 font-light">Property deliver</p>
+                <span className="text-5xl md:text-6xl font-medium text-white" style={{ fontFamily: "var(--font-cormorant), serif" }}>150+</span>
               </div>
-              <div>
-                <span className="text-3xl font-bold text-secondary">20+</span>
-                <p className="mt-1 text-sm text-muted-foreground">Design Awards</p>
+
+              {/* Row 1, Col 2 */}
+              <div className="pb-12 pl-10">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 font-light">Clients served worldwide</p>
+                <span className="text-5xl md:text-6xl font-medium text-white" style={{ fontFamily: "var(--font-cormorant), serif" }}>69+</span>
               </div>
-              <div>
-                <span className="text-3xl font-bold text-secondary">50+</span>
-                <p className="mt-1 text-sm text-muted-foreground">Team Members</p>
+
+              {/* Row 2, Col 1 */}
+              <div className="border-t border-r border-white/10 py-12 pr-6">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 font-light">Awards & Recognition</p>
+                <span className="text-5xl md:text-6xl font-medium text-white" style={{ fontFamily: "var(--font-cormorant), serif" }}>5+</span>
+              </div>
+
+              {/* Row 2, Col 2 */}
+              <div className="border-t border-white/10 py-12 pl-10">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 font-light">Experience</p>
+                <span className="text-5xl md:text-6xl font-medium text-white" style={{ fontFamily: "var(--font-cormorant), serif" }}>12+</span>
+              </div>
+
+              {/* Row 3, Col 1 */}
+              <div className="border-t border-r border-white/10 pt-12 pr-6">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 font-light">Ratings out of 5.0</p>
+                <span className="text-5xl md:text-6xl font-medium text-white" style={{ fontFamily: "var(--font-cormorant), serif" }}>4.9</span>
               </div>
             </div>
           </motion.div>

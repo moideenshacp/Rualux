@@ -17,8 +17,6 @@ import {
   Send
 } from "lucide-react"
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { BsTwitterX } from "react-icons/bs";
 
 
@@ -39,10 +37,10 @@ const services = [
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: BsTwitterX, href: "#", label: "Twitter" },
+  { icon: Facebook, href: "https://www.facebook.com/61583463612949/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/rualux?igsh=MWJvZGt6eTBjZW42bA%3D%3D&utm_source=qr", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/rualux/", label: "LinkedIn" },
+  { icon: BsTwitterX, href: "https://x.com/rualux", label: "Twitter" },
 ]
 
 export function Footer() {
@@ -85,9 +83,9 @@ export function Footer() {
               </span> */}
             </div>
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80">
-              Award-winning interior design studio crafting exceptional spaces
-              that inspire and transform. We bring your vision to life with
-              creativity, precision, and passion.
+              A premium interior design studio specialising in high-end
+              residential and commercial environments, delivering spaces of
+              exceptional refinement and enduring elegance.
             </p>
 
             {/* Social Links */}
@@ -96,6 +94,8 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="group flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-all hover:border-secondary hover:bg-secondary hover:text-secondary-foreground"
                 >
@@ -152,46 +152,31 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
-                <MapPin size={18} className="mt-0.5 shrink-0 text-secondary" />
-                <span>123 Design Avenue, New York, NY 10001</span>
+                <MapPin size={18} className="mt-1 shrink-0 text-secondary" />
+                <span className="leading-relaxed">
+                  RUALUX - DESIGN AND BUILD<br />
+                  Door No. 2406, 4th Floor, Phase 2,<br />
+                  Hi Lite Business Park, Palazhi,<br />
+                  Kozhikode, Kerala, India - 673014
+                </span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-primary-foreground/80">
-                <Phone size={18} className="shrink-0 text-secondary" />
-                <span>+1 (555) 123-4567</span>
+              <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
+                <Phone size={18} className="mt-1 shrink-0 text-secondary" />
+                <span className="leading-relaxed">
+                  +91 9656919676<br />
+                  +91 9567967696
+                </span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-primary-foreground/80">
-                <Mail size={18} className="shrink-0 text-secondary" />
-                <span>hello@luxeinteriors.com</span>
+              <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
+                <Mail size={18} className="mt-1 shrink-0 text-secondary" />
+                <span className="leading-relaxed whitespace-nowrap">
+                  rualuxdesigner@gmail.com<br />
+                  info@rualux.com
+                </span>
               </li>
             </ul>
 
-            {/* Newsletter */}
-            <div className="mt-6">
-              <h4 className="mb-3 text-sm font-medium">Subscribe to Newsletter</h4>
-              <form onSubmit={handleSubscribe} className="flex gap-2">
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
-                  className="bg-white/10 border-none text-white placeholder:text-white/50 focus-visible:ring-secondary"
-                />
-                <Button
-                  type="submit"
-                  variant="secondary"
-                  size="icon"
-                  className="shrink-0"
-                  aria-label="Subscribe"
-                >
-                  <Send size={18} />
-                </Button>
-              </form>
-              {isSubscribed && (
-                <p className="mt-2 text-xs text-secondary">
-                  Thank you for subscribing!
-                </p>
-              )}
-            </div>
+
           </div>
         </div>
 

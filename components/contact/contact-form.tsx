@@ -78,7 +78,7 @@ export function ContactForm() {
           message: formData.message,
           time: new Date().toLocaleString(), // To match {{time}} in your template
           title: "New Inquiry from Website", // To match {{title}} in your Subject
-          to_email: 'shanucp1024@gmail.com',
+          to_email: 'rualuxdesigner@gmail.com',
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
       )
@@ -226,7 +226,7 @@ export function ContactForm() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="h-14 w-full text-base font-semibold"
+            className="h-14 w-full cursor-pointer text-base font-semibold"
             variant="secondary"
           >
             {isSubmitting ? (

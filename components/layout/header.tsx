@@ -83,7 +83,7 @@ export function Header() {
               onClick={closeMenu}
               className="relative z-110 flex items-center"
             >
-              <div className="relative ml-2 h-10 w-48">
+              <div className="relative md:ml-2 ml-0 md:h-10 h-8 md:w-48 w-44">
                 {/* <span
                   className="text-3xl font-extralight tracking-[0.2em] text-white"
                   style={{ fontFamily: "var(--font-cormorant), serif" }}
