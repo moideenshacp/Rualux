@@ -2,7 +2,8 @@
 
 import { motion, useScroll, useSpring } from "framer-motion"
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&q=80"
+const HERO_IMAGE = "https://i.pinimg.com/1200x/03/49/f8/0349f8b30d36c2d884adab63e00d1c59.jpg"
+
 // https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&q=80
 // https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&q=80
 // https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80
