@@ -115,7 +115,7 @@ export const projects: Project[] = [
     category: "Residential",
     description: "A stunning architectural display that comes alive at night, with strategic lighting highlighting its sophisticated layers and premium finishes.",
     image: "/residential/res6.png",
-    date: "2025",
+    date: "2026",
     location: "Kerala"
   },
   {
