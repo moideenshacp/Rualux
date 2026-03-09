@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: "Modernist Geometric Villa",
     category: "Residential",
     description: "A bold architectural statement featuring clean geometric lines, floor-to-ceiling glass, and a seamless integration of indoor and outdoor living.",
-    image: "/residential/res1.png",
+    image: "/residentiall/res1.png",
     date: "2025",
     location: "Kerala"
   },
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: "Tropical Contemporary Retreat",
     category: "Residential",
     description: "Nestled amidst lush greenery, this multi-level contemporary home combines organic materials with sleek modern design for a serene living experience.",
-    image: "/residential/res2.png",
+    image: "/residentiall/res2.png",
     date: "2025",
     location: "Kerala"
   },
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: "Urban Architectural Manor",
     category: "Residential",
     description: "A sophisticated residence that redefines urban luxury with its striking gable rooflines, expansive windows, and meticulously crafted interiors.",
-    image: "/residential/res3.png",
+    image: "/residentiall/res3.png",
     date: "2025",
     location: "Kerala"
   },
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: "Luminous Modern Estate",
     category: "Residential",
     description: "An elegant family home designed to capture natural light, featuring open-plan spaces and a timeless aesthetic that glows with warmth at dusk.",
-    image: "/residential/res4.png",
+    image: "/residentiall/res4.png",
     date: "2025",
     location: "Kerala"
   },
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     title: "Serene Minimalist Interior",
     category: "Residential",
     description: "A masterclass in restraint, this dining space focuses on pure forms, natural textures, and a calming palette to create an atmosphere of refined tranquility.",
-    image: "/residential/res5.png",
+    image: "/residentiall/res5.png",
     date: "2025",
     location: "Kerala"
   },
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     title: "Nocturnal Elegance Residence",
     category: "Residential",
     description: "A stunning architectural display that comes alive at night, with strategic lighting highlighting its sophisticated layers and premium finishes.",
-    image: "/residential/res6.png",
+    image: "/residentiall/res6.png",
     date: "2026",
     location: "Kerala"
   },
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     title: "Refined Suburban Sanctuary",
     category: "Residential",
     description: "Combining architectural precision with the comfort of home, this sanctuary offers a perfect balance of privacy, space, and modern luxury.",
-    image: "/residential/res7.png",
+    image: "/residentiall/res7.png",
     date: "2025",
     location: "Kerala"
   },
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     title: "Grand Neoclassical Mansion",
     category: "Residential",
     description: "A stately estate that embodies timeless grandeur, featuring majestic columns, arched windows, and an imposition of classical architectural beauty.",
-    image: "/residential/res8.jpeg",
+    image: "/residentiall/res8.jpeg",
     date: "2025",
     location: "Kerala"
   },
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     title: "Stately Palatial Villa",
     category: "Residential",
     description: "Exuding opulence and architectural pedigree, this palatial villa stands as a monument to refined living and classical design excellence.",
-    image: "/residential/res9.jpeg",
+    image: "/residentiall/res9.jpeg",
     date: "2025",
     location: "Kerala"
   },
@@ -150,7 +150,7 @@ export const projects: Project[] = [
     title: "Imperial Living Grounds",
     category: "Residential",
     description: "The pinnacle of architectural luxury, this expansive estate offers a regal living experience with its grand facade and meticulously designed grounds.",
-    image: "/residential/res10.jpeg",
+    image: "/residentiall/res10.jpeg",
     date: "2025",
     location: "Kerala"
   }
