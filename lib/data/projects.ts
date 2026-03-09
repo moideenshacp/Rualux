@@ -12,43 +12,39 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Modern Loft",
+    title: "Modernist Geometric Villa",
     category: "Residential",
-    description: "A stunning transformation of an industrial loft into a modern living space with exposed brick, custom furniture, and ambient lighting.",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-    client: "Private Client",
-    date: "2024",
-    location: "New York, NY"
+    description: "A bold architectural statement featuring clean geometric lines, floor-to-ceiling glass, and a seamless integration of indoor and outdoor living.",
+    image: "/residential/res1.png",
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "2",
-    title: "Coastal Villa",
+    title: "Tropical Contemporary Retreat",
     category: "Residential",
-    description: "Beach-inspired interior featuring natural textures, ocean-blue accents, and open-concept living areas that blend indoor and outdoor spaces.",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-    client: "The Morrison Family",
-    date: "2024",
-    location: "Malibu, CA"
+    description: "Nestled amidst lush greenery, this multi-level contemporary home combines organic materials with sleek modern design for a serene living experience.",
+    image: "/residential/res2.png",
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "3",
-    title: "Urban Penthouse",
+    title: "Urban Architectural Manor",
     category: "Residential",
-    description: "Luxurious penthouse design with panoramic city views, premium materials, and a seamless flow between entertainment and private spaces.",
-    image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80",
-    client: "Private Client",
-    date: "2023",
-    location: "Chicago, IL"
+    description: "A sophisticated residence that redefines urban luxury with its striking gable rooflines, expansive windows, and meticulously crafted interiors.",
+    image: "/residential/res3.png",
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "4",
-    title: "Classic Residence",
+    title: "Luminous Modern Estate",
     category: "Residential",
-    description: "Timeless elegance meets modern comfort in this traditional home renovation featuring custom millwork and curated art collections.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    client: "The Anderson Family",
-    date: "2023",
-    location: "Boston, MA"
+    description: "An elegant family home designed to capture natural light, featuring open-plan spaces and a timeless aesthetic that glows with warmth at dusk.",
+    image: "/residential/res4.png",
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "5",
@@ -56,9 +52,8 @@ export const projects: Project[] = [
     category: "Hospitality",
     description: "A welcoming hotel lobby that combines local heritage with contemporary design, creating memorable first impressions for guests.",
     image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80",
-    client: "Grand Hotels Group",
-    date: "2024",
-    location: "Miami, FL"
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "6",
@@ -66,9 +61,8 @@ export const projects: Project[] = [
     category: "Commercial",
     description: "Dynamic workspace designed to foster creativity and collaboration, featuring flexible zones and cutting-edge technology integration.",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    client: "TechVenture Inc.",
-    date: "2024",
-    location: "San Francisco, CA"
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "7",
@@ -76,9 +70,8 @@ export const projects: Project[] = [
     category: "Hospitality",
     description: "Serene wellness retreat featuring natural materials, calming color palettes, and thoughtfully designed relaxation spaces.",
     image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
-    client: "Serenity Spas",
-    date: "2023",
-    location: "Sedona, AZ"
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "8",
@@ -86,19 +79,17 @@ export const projects: Project[] = [
     category: "Commercial",
     description: "Sophisticated executive spaces balancing professionalism with comfort, featuring premium finishes and state-of-the-art amenities.",
     image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-    client: "Global Finance Corp.",
-    date: "2024",
-    location: "New York, NY"
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "9",
-    title: "Scandinavian Apartment",
+    title: "Serene Minimalist Interior",
     category: "Residential",
-    description: "Minimalist apartment embracing Nordic design principles with light woods, clean lines, and functional beauty.",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
-    client: "Private Client",
-    date: "2023",
-    location: "Seattle, WA"
+    description: "A masterclass in restraint, this dining space focuses on pure forms, natural textures, and a calming palette to create an atmosphere of refined tranquility.",
+    image: "/residential/res5.png",
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "10",
@@ -106,9 +97,8 @@ export const projects: Project[] = [
     category: "Hospitality",
     description: "Farm-to-table restaurant design featuring rustic elements, warm lighting, and an inviting atmosphere for memorable dining experiences.",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-    client: "Harvest Kitchen",
-    date: "2024",
-    location: "Portland, OR"
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "11",
@@ -116,20 +106,54 @@ export const projects: Project[] = [
     category: "Commercial",
     description: "Contemporary gallery with flexible exhibition spaces, perfect lighting systems, and architecture that complements the art.",
     image: "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=800&q=80",
-    client: "Modern Art Foundation",
-    date: "2023",
-    location: "Los Angeles, CA"
+    date: "2025",
+    location: "Kerala"
   },
   {
     id: "12",
-    title: "Mountain Retreat",
+    title: "Nocturnal Elegance Residence",
     category: "Residential",
-    description: "Cozy mountain home blending rustic charm with modern amenities, featuring stone fireplaces and panoramic mountain views.",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-    client: "Private Client",
-    date: "2024",
-    location: "Aspen, CO"
+    description: "A stunning architectural display that comes alive at night, with strategic lighting highlighting its sophisticated layers and premium finishes.",
+    image: "/residential/res6.png",
+    date: "2025",
+    location: "Kerala"
+  },
+  {
+    id: "13",
+    title: "Refined Suburban Sanctuary",
+    category: "Residential",
+    description: "Combining architectural precision with the comfort of home, this sanctuary offers a perfect balance of privacy, space, and modern luxury.",
+    image: "/residential/res7.png",
+    date: "2025",
+    location: "Kerala"
+  },
+  {
+    id: "14",
+    title: "Grand Neoclassical Mansion",
+    category: "Residential",
+    description: "A stately estate that embodies timeless grandeur, featuring majestic columns, arched windows, and an imposition of classical architectural beauty.",
+    image: "/residential/res8.jpeg",
+    date: "2025",
+    location: "Kerala"
+  },
+  {
+    id: "15",
+    title: "Stately Palatial Villa",
+    category: "Residential",
+    description: "Exuding opulence and architectural pedigree, this palatial villa stands as a monument to refined living and classical design excellence.",
+    image: "/residential/res9.jpeg",
+    date: "2025",
+    location: "Kerala"
+  },
+  {
+    id: "16",
+    title: "Imperial Living Grounds",
+    category: "Residential",
+    description: "The pinnacle of architectural luxury, this expansive estate offers a regal living experience with its grand facade and meticulously designed grounds.",
+    image: "/residential/res10.jpeg",
+    date: "2025",
+    location: "Kerala"
   }
 ]
 
-export const projectCategories = ["All", "Residential", "Commercial"]
+export const projectCategories = ["All", "Residential", "Commercial", "Interiors"]
