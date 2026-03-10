@@ -44,7 +44,17 @@ export const projects: Project[] = [
     client: "Client name",
     location: "Kerala"
   },
-
+  {
+    id: "4",
+    title: "Almas Jewellery Showroom",
+    category: "Commercial",
+    description: "A contemporary commercial space designed for Almas Jewellery, featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
+    image: "/commercial/com1.jpeg",
+    images: ["/commercial/com1.jpeg", "/commercial/com2.jpeg", "/commercial/com3.jpeg"],
+    date: "2025",
+    client: "Almas Jewellery",
+    location: "Kerala"
+  },
 ]
 
 export const projectCategories = ["All", "Residential", "Commercial", "Interiors"]
