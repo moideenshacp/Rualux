@@ -8,6 +8,7 @@ export interface Project {
   client?: string
   date?: string
   location?: string
+  area?: string
 }
 
 export const projects: Project[] = [
@@ -19,18 +20,19 @@ export const projects: Project[] = [
     image: "/residentiall/res1.png",
     images: ["/residentiall/res1.png", "/residentiall/res2.png"],
     date: "2025",
-    client: "Client name",
+    client: "Mr. Yoosaf kodakkat",
+    area: "8000 sqft",
     location: "Kerala"
   },
   {
     id: "2",
-    title: "Urban Architectural Manor",
+    title: "Modern Contemporary Vernacular",
     category: "Residential",
-    description: "A sophisticated residence that redefines urban luxury with its striking gable rooflines, expansive windows, and meticulously crafted interiors.",
+    description: "A sophisticated residence that redefines luxury with its striking gable rooflines, expansive windows, and meticulously crafted interiors.",
     image: "/residentiall/res3.png",
     images: ["/residentiall/res3.png", "/residentiall/res4.png", "/residentiall/res6.png"],
     date: "2025",
-    client: "Client name",
+    client: "Mr. Muhammed Niyas Thottiyil ",
     location: "Kerala"
   },
   {
@@ -46,13 +48,25 @@ export const projects: Project[] = [
   },
   {
     id: "4",
-    title: "Almas Jewellery Showroom",
+    title: "Geometric and Sleek Facades",
     category: "Commercial",
-    description: "A contemporary commercial space designed for Almas Jewellery, featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
+    description: "A commercial space featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
     image: "/commercial/commercial1.jpeg",
     images: ["/commercial/commercial1.jpeg", "/commercial/commercial2.jpeg", "/commercial/commercial3.jpeg"],
     date: "2025",
-    client: "Almas Jewellery",
+    client: "Almas Gold and Diamonds",
+    area: "980 sqft",
+    location: "Kerala"
+  },
+  {
+    id: "5",
+    title: "Modern Two Story",
+    category: "Residential",
+    description: "A modern two story house featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
+    image: "/commercial/commercial5.jpeg",
+    date: "2025",
+    client: "Mr. Abdul Rasheed Ambalancheeri",
+    area: "5600 sqft",
     location: "Kerala"
   },
 ]

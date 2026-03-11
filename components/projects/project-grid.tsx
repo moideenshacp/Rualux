@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
-import { X, MapPin, Calendar, User, ChevronLeft, ChevronRight } from "lucide-react"
+import { X, MapPin, Calendar, User, ChevronLeft, ChevronRight, Ruler } from "lucide-react"
 import useEmblaCarousel from "embla-carousel-react"
 
 
@@ -241,10 +241,10 @@ export function ProjectGrid() {
                       {selectedProject.location}
                     </div>
                   )}
-                  {selectedProject.date && (
+                  {selectedProject.area && (
                     <div className="flex items-center gap-2">
-                      <Calendar size={16} className="text-secondary" />
-                      {selectedProject.date}
+                      <Ruler size={16} className="text-secondary" />
+                      {selectedProject.area}
                     </div>
                   )}
                   {selectedProject.client && (
