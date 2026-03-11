@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rualux - Rualux Design and Build',
     description: 'Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.',
-    url: 'https://rualux.vercel.app',
+    url: 'https://www.rualux.com',
     siteName: 'Rualux',
     images: [
       {
