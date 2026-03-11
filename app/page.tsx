@@ -22,7 +22,7 @@ export default function HomePage() {
         <div className="relative z-10">
           <FeaturedProjects />
           <ServicesPreview />
-          <Testimonials />
+          {/* <Testimonials /> */}
           {/* <CTASection /> */}
           <Footer />
         </div>

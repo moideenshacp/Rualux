@@ -30,7 +30,7 @@ export function StickyCTA() {
                 >
                     <Link
                         href="/contact"
-                        className="group relative flex items-center gap-4 bg-black/40 backdrop-blur-xl border border-white/10 px-8 py-4 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 hover:bg-white hover:border-white"
+                        className="group relative flex items-center gap-4 bg-black/40 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 hover:bg-white hover:border-white"
                     >
                         <span
                             className="text-white text-base tracking-widest font-light transition-colors duration-500 group-hover:text-black"
