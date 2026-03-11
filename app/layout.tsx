@@ -22,7 +22,7 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: 'Rualux - Rualux Design and Build',
-  description: 'Transform your space into art with our award-winning interior design solutions. Residential and commercial design services that bring your vision to life.',
+  description: 'Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.',
   keywords: ['interior design', 'home decor', 'residential design', 'commercial design', 'luxury interiors'],
   icons: {
     icon: '/Rua-favicon.jpg',
@@ -30,12 +30,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Rualux - Rualux Design and Build',
-    description: 'Transform your space into art with our award-winning interior design solutions. Residential and commercial design services that bring your vision to life.',
+    description: 'Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.',
     url: 'https://rualux.vercel.app',
     siteName: 'Rualux',
     images: [
       {
-        url: '/Rualux-logo.png', // Ideally this should be a large preview image (1200x630)
+        url: '/Rua-favicon.jpg',
         width: 1200,
         height: 630,
         alt: 'Rualux Design and Build',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Rualux - Rualux Design and Build',
-    description: 'Transform your space into art with our award-winning interior design solutions.',
-    images: ['/Rualux-logo.png'],
+    description: 'Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.',
+    images: ['/Rua-favicon.jpg'],
   },
 }
 
