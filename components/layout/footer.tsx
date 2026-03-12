@@ -163,16 +163,16 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
                 <Phone size={18} className="mt-1 shrink-0 text-secondary" />
-                <span className="leading-relaxed">
-                  +91 9656919676<br />
-                  +91 9567967696
+                <span className="leading-relaxed flex flex-col">
+                  <a href="tel:+919656919676" className="hover:text-secondary transition-colors">+91 9656919676</a>
+                  <a href="tel:+919567967696" className="hover:text-secondary transition-colors">+91 9567967696</a>
                 </span>
               </li>
               <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
                 <Mail size={18} className="mt-1 shrink-0 text-secondary" />
-                <span className="leading-relaxed whitespace-nowrap">
-                  rualuxdesigner@gmail.com<br />
-                  info@rualux.com
+                <span className="leading-relaxed whitespace-nowrap flex flex-col">
+                  <a href="mailto:rualuxdesigner@gmail.com" className="hover:text-secondary transition-colors">rualuxdesigner@gmail.com</a>
+                  <a href="mailto:info@rualux.com" className="hover:text-secondary transition-colors">info@rualux.com</a>
                 </span>
               </li>
             </ul>

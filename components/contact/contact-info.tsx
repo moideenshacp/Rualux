@@ -5,26 +5,43 @@ import { useInView } from "react-intersection-observer"
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { BsTwitterX } from "react-icons/bs"
 
-const contactDetails = [
+interface ContactDetail {
+  icon: any
+  title: string
+  details: { label: string; href?: string }[]
+}
+
+const contactDetails: ContactDetail[] = [
   {
     icon: MapPin,
     title: "Visit Our Studio",
-    details: ["RUALUX - DESIGN AND BUILD", "Door No. 2406, 4th Floor, Phase 2,", "Hi Lite Business Park, Palazhi,", "Kozhikode, Kerala, India - 673014"],
+    details: [
+      { label: "RUALUX - DESIGN AND BUILD" },
+      { label: "Door No. 2406, 4th Floor, Phase 2," },
+      { label: "Hi Lite Business Park, Palazhi," },
+      { label: "Kozhikode, Kerala, India - 673014" }
+    ],
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 9656919676", "+91 9567967696"],
+    details: [
+      { label: "+91 9656919676", href: "tel:+919656919676" },
+      { label: "+91 9567967696", href: "tel:+919567967696" }
+    ],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["rualuxdesigner@gmail.com", "info@rualux.com"],
+    details: [
+      { label: "rualuxdesigner@gmail.com", href: "mailto:rualuxdesigner@gmail.com" },
+      { label: "info@rualux.com", href: "mailto:info@rualux.com" }
+    ],
   },
   {
     icon: Clock,
     title: "Business Hours",
-    details: ["Mon - Sat: 9:30 AM - 5:30 PM"],
+    details: [{ label: "Mon - Sat: 9:30 AM - 5:30 PM" }],
   },
 ]
 
@@ -60,9 +77,15 @@ export function ContactInfo() {
           </div>
           <div>
             <h3 className="font-semibold text-foreground">{item.title}</h3>
-            {item.details.map((detail) => (
-              <p key={detail} className="mt-1 text-sm text-muted-foreground">
-                {detail}
+            {item.details.map((detail, dIndex) => (
+              <p key={dIndex} className="mt-1 text-sm text-muted-foreground">
+                {detail.href ? (
+                  <a href={detail.href} className="hover:text-secondary transition-colors">
+                    {detail.label}
+                  </a>
+                ) : (
+                  detail.label
+                )}
               </p>
             ))}
           </div>
