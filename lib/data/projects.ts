@@ -38,9 +38,9 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    title: "Modern Two Story",
+    title: "Neo Classical Mansion",
     category: "Residential",
-    description: "A modern two story house featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
+    description: "A stunning white two-story residence that exemplifies neoclassical architectural beauty. The design features a grand pillared portico, expansive balconies, and a meticulously landscaped yard with palm trees.",
     image: "/residentiall/fathah/fr1.jpeg",
     images: ["/residentiall/fathah/fr1.jpeg", "/residentiall/fathah/fr2.jpeg", "/residentiall/fathah/fr3.jpeg", "/residentiall/fathah/fr4.jpeg", "/residentiall/fathah/fr5.jpeg", "/residentiall/fathah/fr6.jpeg"],
     date: "2025",
@@ -107,9 +107,9 @@ export const projects: Project[] = [
   },
   {
     id: "9",
-    title: "Modernist Geometric Villa",
+    title: "Neo Classical Mansion",
     category: "Interiors",
-    description: "A bold architectural statement featuring clean geometric lines, floor-to-ceiling glass, and a seamless integration of indoor and outdoor living.",
+    description: "A stunning white two-story residence that exemplifies neoclassical architectural beauty. The design features a grand pillared portico, expansive balconies, and a meticulously landscaped yard with palm trees.",
     image: "/interiors/fathah/f4.jpeg",
     images: ["/interiors/fathah/f4.jpeg", "/interiors/fathah/f5.jpeg", "/interiors/fathah/f6.jpeg", "/interiors/fathah/f1.jpeg", "/interiors/fathah/f2.jpeg", "/interiors/fathah/f3.jpeg"],
     date: "2025",
