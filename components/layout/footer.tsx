@@ -171,8 +171,8 @@ export function Footer() {
               <li className="flex items-start gap-3 text-sm text-primary-foreground/80">
                 <Mail size={18} className="mt-1 shrink-0 text-secondary" />
                 <span className="leading-relaxed whitespace-nowrap flex flex-col">
-                  <a href="mailto:rualuxdesigner@gmail.com" className="hover:text-secondary transition-colors">rualuxdesigner@gmail.com</a>
                   <a href="mailto:info@rualux.com" className="hover:text-secondary transition-colors">info@rualux.com</a>
+                  <a href="mailto:rualuxdesigner@gmail.com" className="hover:text-secondary transition-colors">rualuxdesigner@gmail.com</a>
                 </span>
               </li>
             </ul>

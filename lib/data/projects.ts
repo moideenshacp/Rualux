@@ -26,6 +26,42 @@ export const projects: Project[] = [
   },
   {
     id: "2",
+    title: "Grand Neoclassical Mansion",
+    category: "Residential",
+    description: "A stately estate that embodies timeless grandeur, featuring majestic columns, arched windows, and an imposition of classical architectural beauty.",
+    image: "/residentiall/res8.jpeg",
+    images: ["/residentiall/res8.jpeg", "/residentiall/res9.jpeg", "/residentiall/res10.jpeg"],
+    date: "2025",
+    client: "Mr. Shafi",
+    area: "7200 sqft",
+    location: "Kerala"
+  },
+  {
+    id: "3",
+    title: "Modern Two Story",
+    category: "Residential",
+    description: "A modern two story house featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
+    image: "/residentiall/fathah/fr1.jpeg",
+    images: ["/residentiall/fathah/fr1.jpeg", "/residentiall/fathah/fr2.jpeg", "/residentiall/fathah/fr3.jpeg", "/residentiall/fathah/fr4.jpeg", "/residentiall/fathah/fr5.jpeg", "/residentiall/fathah/fr6.jpeg"],
+    date: "2025",
+    client: "Mr. Abdul Fathah Anchalan",
+    area: "5800 sqft",
+    location: "Kerala"
+  },
+  {
+    id: "4",
+    title: "Modern Two Story",
+    category: "Residential",
+    description: "A modern two story house featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
+    image: "/residentiall/res11.jpeg",
+    date: "2025",
+    client: "Mr. Abdul Rasheed Ambalancheeri",
+    area: "5600 sqft",
+    location: "Kerala"
+  },
+
+  {
+    id: "5",
     title: "Modern Contemporary Vernacular",
     category: "Residential",
     description: "A sophisticated residence that redefines luxury with its striking gable rooflines, expansive windows, and meticulously crafted interiors.",
@@ -36,18 +72,7 @@ export const projects: Project[] = [
     location: "Kerala"
   },
   {
-    id: "3",
-    title: "Grand Neoclassical Mansion",
-    category: "Residential",
-    description: "A stately estate that embodies timeless grandeur, featuring majestic columns, arched windows, and an imposition of classical architectural beauty.",
-    image: "/residentiall/res8.jpeg",
-    images: ["/residentiall/res8.jpeg", "/residentiall/res9.jpeg", "/residentiall/res10.jpeg"],
-    date: "2025",
-    client: "Client name",
-    location: "Kerala"
-  },
-  {
-    id: "4",
+    id: "6",
     title: "Geometric and Sleek Facades",
     category: "Commercial",
     description: "A commercial space featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
@@ -59,16 +84,50 @@ export const projects: Project[] = [
     location: "Kerala"
   },
   {
-    id: "5",
-    title: "Modern Two Story",
-    category: "Residential",
-    description: "A modern two story house featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
-    image: "/commercial/commercial5.jpeg",
+    id: "7",
+    title: "Modern Contemporary Vernacular",
+    category: "Interiors",
+    description: "A sophisticated residence that redefines luxury with its striking gable rooflines, expansive windows, and meticulously crafted interiors.",
+    image: "/interiors/niyas/1.jpeg",
+    images: ["/interiors/niyas/1.jpeg", "/interiors/niyas/2.jpeg", "/interiors/niyas/3.jpeg"],
     date: "2025",
-    client: "Mr. Abdul Rasheed Ambalancheeri",
-    area: "5600 sqft",
+    client: "Mr. Muhammed Niyas Thottiyil ",
     location: "Kerala"
   },
+  {
+    id: "8",
+    title: "Modernist Geometric Villa",
+    category: "Interiors",
+    description: "A bold architectural statement featuring clean geometric lines, floor-to-ceiling glass, and a seamless integration of indoor and outdoor living.",
+    image: "/interiors/yoosuf/y1.jpeg",
+    images: ["/interiors/yoosuf/y1.jpeg", "/interiors/yoosuf/y2.jpeg", "/interiors/yoosuf/y3.jpeg"],
+    date: "2025",
+    client: "Mr. Yoosaf kodakkat",
+    location: "Kerala"
+  },
+  {
+    id: "9",
+    title: "Modernist Geometric Villa",
+    category: "Interiors",
+    description: "A bold architectural statement featuring clean geometric lines, floor-to-ceiling glass, and a seamless integration of indoor and outdoor living.",
+    image: "/interiors/fathah/f4.jpeg",
+    images: ["/interiors/fathah/f4.jpeg", "/interiors/fathah/f5.jpeg", "/interiors/fathah/f6.jpeg", "/interiors/fathah/f1.jpeg", "/interiors/fathah/f2.jpeg", "/interiors/fathah/f3.jpeg"],
+    date: "2025",
+    client: "Mr. Abdul Fathah Anchalan",
+    location: "Kerala"
+  },
+  {
+    id: "10",
+    title: "Modern Office",
+    category: "Interiors",
+    description: "A modern office space featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
+    image: "/interiors/rualux/r1.jpeg",
+    images: ["/interiors/rualux/r1.jpeg", "/interiors/rualux/r2.jpeg", "/interiors/rualux/r3.jpeg", "/interiors/rualux/r4.jpeg", "/interiors/rualux/r5.jpeg", "/interiors/rualux/r6.jpeg"],
+    date: "2025",
+    client: "Rualux",
+    location: "Kerala"
+  },
+
 ]
 
 export const projectCategories = ["All", "Residential", "Commercial", "Interiors"]

@@ -34,8 +34,8 @@ const contactDetails: ContactDetail[] = [
     icon: Mail,
     title: "Email Us",
     details: [
+      { label: "info@rualux.com", href: "mailto:info@rualux.com" },
       { label: "rualuxdesigner@gmail.com", href: "mailto:rualuxdesigner@gmail.com" },
-      { label: "info@rualux.com", href: "mailto:info@rualux.com" }
     ],
   },
   {
