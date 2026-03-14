@@ -122,7 +122,7 @@ export const projects: Project[] = [
     category: "Interiors",
     description: "A modern office space featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
     image: "/interiors/rualux/r1.jpeg",
-    images: ["/interiors/rualux/r1.jpeg", "/interiors/rualux/r2.jpeg", "/interiors/rualux/r3.jpeg", "/interiors/rualux/r4.jpeg", "/interiors/rualux/r5.jpeg", "/interiors/rualux/r6.jpeg"],
+    images: ["/interiors/rualux/r1.jpeg", "/interiors/rualux/r2.jpeg", "/interiors/rualux/r3.jpeg", "/interiors/rualux/r4.jpeg", "/interiors/rualux/r5.jpeg"],
     date: "2025",
     client: "Rualux",
     location: "Kerala"
