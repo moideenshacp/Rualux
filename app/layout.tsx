@@ -23,7 +23,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: 'Rualux - Rualux Design and Build',
   description: 'Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.',
-  keywords: ['interior design', 'home decor', 'residential design', 'commercial design', 'luxury interiors'],
+  keywords: ['interior design', 'home decor', 'residential design', 'commercial design', 'luxury interiors', 'architecture firm kerala', 'best architect in kerala', 'best interior designer in kerala', 'best interior designer in malappuram', 'best architect in malappuram', 'best interior designer in calicut', 'best architect in calicut', 'best interior designer in malappuram', 'best architect in malappuram', 'best interior designer in calicut', 'best architect in calicut'],
   icons: {
     icon: '/Rua-favicon.jpg',
     apple: '/Rua-favicon.jpg',
@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     ],
     locale: 'en_US',
     type: 'website',
+  },
+  verification: {
+    google: 'pu3_Iv9k3AE-aIi_o9KfC0dlKSRDGA9WxvS7MuQhVBo',
   },
   twitter: {
     card: 'summary_large_image',
