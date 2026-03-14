@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   description: 'Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.',
   keywords: ['interior design', 'home decor', 'residential design', 'commercial design', 'luxury interiors', 'architecture firm kerala', 'best architect in kerala', 'best interior designer in kerala', 'best interior designer in malappuram', 'best architect in malappuram', 'best interior designer in calicut', 'best architect in calicut', 'best interior designer in malappuram', 'best architect in malappuram', 'best interior designer in calicut', 'best architect in calicut'],
   icons: {
-    icon: '/Rua-favicon.jpg',
-    apple: '/Rua-favicon.jpg',
+    icon: '/Rua-favicon.png',
+    apple: '/Rua-favicon.png',
   },
   openGraph: {
     title: 'Rualux - Rualux Design and Build',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: 'Rualux',
     images: [
       {
-        url: '/Rua-favicon.jpg',
+        url: '/Rua-favicon.png',
         width: 1200,
         height: 630,
         alt: 'Rualux Design and Build',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Rualux - Rualux Design and Build',
     description: 'Transforming the ephemeral into the enduring, crafting sanctuaries where architectural precision meets the quiet soul of interior storytelling.',
-    images: ['/Rua-favicon.jpg'],
+    images: ['/Rua-favicon.png'],
   },
 }
 
