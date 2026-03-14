@@ -127,6 +127,17 @@ export const projects: Project[] = [
     client: "Rualux",
     location: "Kerala"
   },
+  {
+    id: "11",
+    title: "Modern Two Story",
+    category: "Interiors",
+    description: "A modern two story house featuring a sophisticated facade with modern architectural elements, warm lighting, and an inviting glass storefront.",
+    image: "/interiors/rasheed/ri1.jpeg",
+    images: ["/interiors/rasheed/ri1.jpeg", "/interiors/rasheed/ri2.jpeg", "/interiors/rasheed/ri3.jpeg"],
+    date: "2025",
+    client: "Mr. Abdul Rasheed Ambalancheeri",
+    location: "Kerala"
+  },
 
 ]
 
